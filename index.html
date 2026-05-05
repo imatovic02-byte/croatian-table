@@ -413,7 +413,7 @@ footer{background:var(--ink);border-top:1px solid rgba(196,153,58,.1);padding:56
         <img src="dubrovnik.jpg" alt="Dubrovnik old city fountain" loading="lazy">
         <div class="reg-content">
                     <div class="reg-name">Dubrovnik Region</div>
-          <div class="reg-tag">Dingač · Zelena Menestra · Bakalar</div>
+          <div class="reg-tag">Zelena Menestra · Bakalar · Dingač</div>
         </div>
       </div>
     </div>
@@ -626,5 +626,239 @@ document.querySelector('.nl-form').addEventListener('submit', function(e) {
   }
 });
 </script>
+
+<!-- REGION MODAL -->
+<style>
+.region-modal-overlay{
+  position:fixed;inset:0;z-index:2000;
+  background:rgba(10,8,5,.92);
+  display:flex;align-items:center;justify-content:center;
+  padding:20px;
+  opacity:0;pointer-events:none;transition:opacity .35s;
+}
+.region-modal-overlay.active{opacity:1;pointer-events:all}
+.region-modal{
+  background:var(--ink2);border:1px solid rgba(196,153,58,.2);
+  border-radius:18px;max-width:680px;width:100%;
+  max-height:88vh;overflow-y:auto;
+  transform:translateY(24px);transition:transform .35s;
+  scrollbar-width:thin;scrollbar-color:rgba(196,153,58,.3) transparent;
+}
+.region-modal-overlay.active .region-modal{transform:translateY(0)}
+.modal-hero{height:220px;position:relative;overflow:hidden;border-radius:18px 18px 0 0}
+.modal-hero img{width:100%;height:100%;object-fit:cover}
+.modal-hero::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(10,8,5,.85),transparent 60%)}
+.modal-hero-text{position:absolute;bottom:20px;left:24px;right:24px;z-index:2}
+.modal-region-name{font-family:'Cormorant Garamond',serif;font-size:2rem;
+  font-weight:300;color:var(--white);line-height:1}
+.modal-region-sub{font-family:'Raleway',sans-serif;font-size:.6rem;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:4px}
+.modal-body{padding:28px 28px 32px}
+.modal-close{position:absolute;top:16px;right:16px;z-index:10;
+  width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,.5);
+  border:1px solid rgba(255,255,255,.2);color:var(--white);
+  font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:background .2s}
+.modal-close:hover{background:rgba(196,153,58,.4)}
+.modal-fact{margin-bottom:22px;padding-bottom:22px;
+  border-bottom:1px solid rgba(196,153,58,.1)}
+.modal-fact:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.modal-fact-title{font-family:'Raleway',sans-serif;font-size:.65rem;font-weight:800;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.modal-fact-body{font-family:'EB Garamond',serif;font-size:1rem;
+  color:rgba(254,250,242,.72);line-height:1.8}
+@media(max-width:500px){
+  .modal-body{padding:20px 18px 24px}
+  .modal-region-name{font-size:1.5rem}
+}
+</style>
+
+<div class="region-modal-overlay" id="regionModal" onclick="closeRegionModal(event)">
+  <div class="region-modal" id="regionModalInner">
+    <div class="modal-hero">
+      <img id="modalHeroImg" src="" alt="">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-hero-text">
+        <div class="modal-region-name" id="modalRegionName"></div>
+        <div class="modal-region-sub" id="modalRegionSub"></div>
+      </div>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+const regionFacts = {
+  istria: {
+    name: "Istria & Kvarner",
+    sub: "Northwest Peninsula · Truffle Country",
+    img: "istria.jpg",
+    facts: [
+      {
+        title: "🍄 The Truffle Capital of Croatia",
+        body: "The Motovun forest in central Istria is one of the world's premier white truffle hunting grounds. Season runs October through January, when trained dogs work the oak forests at dawn. The largest truffle ever found in Croatia weighed over 1.3 kg — now in the Guinness World Records. During truffle season, Istria transforms into a gourmet pilgrimage destination drawing chefs and food lovers from across Europe."
+      },
+      {
+        title: "🏛️ Five Centuries of Venice",
+        body: "Istria was under Venetian rule from 1267 to 1797 — nearly 530 years. This left an indelible mark on the cuisine, architecture, dialect and culture. The Istrian word for soup is 'maneštra' (from Venetian dialect), pasta-making is a daily tradition, and polenta appears on tables alongside bread. The Venetian Lion of Saint Mark still adorns buildings across the peninsula."
+      },
+      {
+        title: "🐂 The Boškarin — Living Heritage",
+        body: "The Boškarin is Istria's ancient long-horned grey ox, depicted in Roman mosaics found across the peninsula. By the 1980s the breed had nearly vanished — fewer than 100 animals remained. A dedicated conservation effort brought it back. Today around 800 Boškarin roam Istrian pastures and their PDO-protected meat is one of the most prized ingredients in the region's finest restaurants."
+      },
+      {
+        title: "🍷 Malvazija & Teran",
+        body: "Istria's two great indigenous wines could not be more different. Malvazija Istarska is golden, aromatic and mineral — the perfect companion to seafood and truffles. Teran is deep ruby-red, iron-rich and almost austere — made for roasted meats and aged cheese. Both have been grown on Istrian red soil for over two thousand years. Istrian olive oil is equally celebrated — cold-pressed from indigenous varieties, it regularly wins international competitions."
+      }
+    ]
+  },
+  dalmatia: {
+    name: "Dalmatia",
+    sub: "Central & South Adriatic Coast · Over 1,200 Islands",
+    img: "dalmatia.jpg",
+    facts: [
+      {
+        title: "☀️ Fjaka — The Art of Doing Nothing",
+        body: "Fjaka is an untranslatable Dalmatian concept — a state of blissful, guilt-free idleness. Not laziness, not boredom, but a conscious surrender to the moment. Lying in the shade after lunch while the Adriatic glitters below, the cicadas sing, and time dissolves. Fjaka is considered a genuine cultural value in Dalmatia — a form of Mediterranean wisdom about the proper pace of life. Tourists often discover it on their first afternoon in Split and never fully recover."
+      },
+      {
+        title: "🐙 The Octopus Drying Tradition",
+        body: "Along every Dalmatian island, octopus is hung to dry on wooden frames in the sun and bora wind — a sight as iconic as the stone houses themselves. Fresh octopus is beaten against rocks to tenderise it (a practice still performed by older fishermen), then hung for hours or days. Dried octopus is then grilled briefly and eaten with wine as a snack — intensely flavoured, chewy and extraordinary. It is one of the most distinctive culinary experiences of the Dalmatian islands."
+      },
+      {
+        title: "🔔 The Peka — Ancient Fire Cooking",
+        body: "Cooking under the peka — a heavy cast-iron bell heaped with glowing embers — is one of Croatia's most ancient cooking methods, predating metal ovens by millennia. Restaurants that serve peka require 24-hour advance notice. The golden rule is absolute: never lift the peka during cooking. Every peek loses heat and steam. A proper peka requires 2–3 hours of patient fire-tending — and the moment the bell is lifted at the table, releasing a cloud of fragrant steam, is one of Croatia's great culinary rituals."
+      },
+      {
+        title: "🌊 2,700 Hours of Sunshine",
+        body: "Dalmatia enjoys over 2,700 hours of sunshine per year — one of the highest in all of Europe, comparable to parts of North Africa. This extraordinary light shapes everything: the bleached limestone landscape, the flavour of olive oil pressed from sun-drenched olives, the sweetness of Dalmatian figs, and the character of its people. The bora — the fierce, cold northeast wind from the Dinaric Alps — provides dramatic contrast, arriving without warning and dropping temperatures by 20 degrees in an hour."
+      }
+    ]
+  },
+  zagreb: {
+    name: "Zagreb & Zagorje",
+    sub: "Continental Croatia · Austro-Hungarian Heritage",
+    img: "zagreb.jpg",
+    facts: [
+      {
+        title: "🎄 Advent in Zagreb — Europe's Best Christmas Market",
+        body: "Zagreb's Advent market has been voted Europe's best Christmas market multiple times by readers of the European Best Destinations guide. The entire city centre transforms from late November through January — ice rinks, mulled wine (kuhano vino), roasted chestnuts, fritule, and thousands of lights. The Ban Jelačić Square and surrounding streets become one of the most magical winter destinations in Europe. The tradition of Zagreb's Christmas market dates to the 19th century."
+      },
+      {
+        title: "🏛️ Dolac — The Belly of Zagreb",
+        body: "The Dolac covered market, built in 1930 above the old city, is Zagreb's most beloved institution. Every morning, farmers from Zagorje and the surrounding countryside bring fresh vegetables, cheese, eggs, honey and flowers. The distinctive red-umbrella stalls are one of Zagreb's most iconic images. Locals say that to truly understand Zagreb, you must visit Dolac on a Saturday morning, drink a coffee at one of the surrounding bars, and watch the city wake up."
+      },
+      {
+        title: "🥐 Habsburg Legacy on the Plate",
+        body: "Zagreb was a major administrative centre of the Austro-Hungarian Empire and its cuisine reflects centuries of Central European influence. The elaborate pastry tradition, refined café culture (kavana), breaded cutlets, cream sauces and sophisticated desserts all carry the fingerprints of Vienna, Budapest and Prague. Zagreb had operating cafés and pastry shops (slastičarnice) in the 18th century — some family-run establishments have been in continuous operation for over 100 years."
+      },
+      {
+        title: "🍯 Licitar — The Heart of Zagreb",
+        body: "The bright red icing-covered heart-shaped honey gingerbread (licitarsko srce) is one of the most iconic symbols of Zagreb — given as tokens of love, luck and friendship for over 500 years. The craft of licitar-making is inscribed on UNESCO's Intangible Cultural Heritage list. Zagreb's Christmas and Advent markets are filled with licitar hearts. Some licitar workshops date to the 18th century and their painted designs have remained unchanged for over 200 years."
+      }
+    ]
+  },
+  lika: {
+    name: "Lika",
+    sub: "Central Karst Highlands · 400–1800m Altitude",
+    img: "lika.jpg",
+    facts: [
+      {
+        title: "🏔️ Plitvice — Croatia's Natural Wonder",
+        body: "The Plitvice Lakes National Park, located in the heart of Lika, is Croatia's first and most visited national park — inscribed on the UNESCO World Heritage list in 1979. Sixteen terraced lakes connected by waterfalls cascade through ancient forest, their colour shifting from turquoise to green to blue depending on the light, minerals and angle. The lakes are formed by travertine barriers built up by microorganisms over thousands of years — a living geological process still happening today."
+      },
+      {
+        title: "🐑 The Lika Lamb — PDO Protected",
+        body: "Lika lamb (Ličko janje) grazes on wild thyme, sage, wild garlic and dozens of mountain herbs at altitudes between 400 and 1,800 metres. The harsh landscape, clean mountain air and herb-rich pastures give the meat a flavour found nowhere else on earth — complex, aromatic and unlike any lowland lamb. It is one of Croatia's most prized PDO-protected products. Easter spit-roasted Lika lamb, prepared over oak wood fires after midnight Mass, is one of the great ritual meals of Croatian culture."
+      },
+      {
+        title: "❄️ The Harshest and Most Beautiful Region",
+        body: "Lika is Croatia's least populated region — a vast karst plateau between the Velebit mountains and the Dinaric Alps, with long cold winters and short summers. This isolation has preserved ancient cooking traditions entirely unchanged for centuries. The Velebit mountain range, stretching 145 kilometres along the coast, is one of Europe's largest and most dramatic mountain chains — home to bears, wolves, lynx and golden eagles. The view of the Adriatic from Velebit's peaks is one of Croatia's most breathtaking experiences."
+      }
+    ]
+  },
+  slavonia: {
+    name: "Slavonija",
+    sub: "Eastern Pannonian Plain · Croatia's Breadbasket",
+    img: "slavonia.jpg",
+    facts: [
+      {
+        title: "🐷 Kolinje — The Great Pig Slaughter",
+        body: "Kolinje is Slavonia's most important annual tradition — held in November and December when temperatures drop below freezing. Neighbours gather before dawn, bringing their own knives and expertise. Every part of the pig is used — meat becomes sausages and roasts, fat is rendered into lard, organs are cooked the same day, blood becomes blood sausage. The event involves enormous quantities of food and wine, music all day, and the passing of skills from elders to the young. Kolinje is about community survival, shared labour, and the rhythms of rural life."
+      },
+      {
+        title: "🌶️ The Kingdom of Paprika",
+        body: "Paprika is to Slavonia what olive oil is to Dalmatia — it defines and dominates the entire cuisine. The kapija pepper, grown throughout the region, is air-dried and ground on stone mills into sweet and hot paprika. The critical technique: always add paprika off the heat, stirring rapidly, then return to heat immediately. Paprika that burns becomes bitter and ruins the dish. The finest Slavonian paprika is made from peppers dried slowly in attic rooms — never in the sun, which bleaches the colour and diminishes flavour."
+      },
+      {
+        title: "🎶 The Fiš Festival",
+        body: "The annual Fiš Festival held in Slavonia is one of Croatia's most spectacular food events — teams from across the region compete to produce the finest fiš paprikaš in enormous copper cauldrons over open fires along the riverbank. Tens of thousands of visitors attend over two days. The winning team earns not just a trophy but a year of undisputed honour among neighbours. The festival represents the living tradition of Slavonian river fishing culture — a way of life tied to the great rivers Sava, Drava and Danube."
+      },
+      {
+        title: "🍷 Graševina — The Forgotten Great Wine",
+        body: "Slavonia's Graševina (Welschriesling) is one of Central Europe's most underrated white wines — crisp, mineral and food-friendly. Grown on the gentle slopes above the Drava River, Slavonian Graševina at its best rivals Alsatian Riesling for complexity and elegance. The region also produces exceptional Traminac (Gewürztraminer). Slavonian oak barrels — large traditional casks called bačve — are exported to the finest wine producers in France and Italy, where they are prized for their specific porosity and flavour."
+      }
+    ]
+  },
+  dubrovnik: {
+    name: "Dubrovnik Region",
+    sub: "Southern Dalmatia · The Pearl of the Adriatic",
+    img: "dubrovnik.jpg",
+    facts: [
+      {
+        title: "🏰 The Ragusan Republic — Five Centuries of Freedom",
+        body: "For nearly five centuries (1358–1808), Dubrovnik was the independent Ragusan Republic — one of the wealthiest and most sophisticated trading states in the world. At its peak it maintained diplomatic relations with over 50 countries, had its own fleet, currency, and was one of the first states in Europe to abolish the slave trade in 1416. The Republic's motto was 'Non bene pro toto libertas venditur auro' — Freedom is not sold for all the gold in the world. This extraordinary history shaped a cuisine uniquely refined and cosmopolitan."
+      },
+      {
+        title: "🕯️ Feast of Saint Blaise — Dubrovnik's Sacred Day",
+        body: "February 3rd is the Feast of Saint Blaise (Sveti Vlaho) — Dubrovnik's most important annual celebration, honouring the city's patron saint who, according to legend, appeared in a vision to warn of a Venetian attack in 972. The entire Old City fills with processions, music, the blessing of throats, and traditional food. Šporki makaruli — the ancient pasta dish spiced with cinnamon and cloves — is traditionally eaten on this day. The festival has been celebrated without interruption for over 1,000 years."
+      },
+      {
+        title: "🌹 Zelena Menestra — The Soul of the City",
+        body: "While tourists admire the walls and stones, Dubrovnik families eat zelena menestra — the ancient smoked pork and kale soup that has fed generations of sailors, craftsmen and fishermen through Adriatic winters. It is the dish that connects the modern city to its working-class roots, made in homes across Dubrovnik every week regardless of season. In summer, green beans replace the kale; in autumn, pumpkin may be added. It is the anti-tourist dish — the one that tells you what the city really eats."
+      },
+      {
+        title: "🌊 Ston — Oysters, Salt and the Longest Wall",
+        body: "Ston on the Pelješac Peninsula is one of Croatia's most remarkable towns — home to the second-longest medieval wall system in Europe (after the Great Wall of China), and the oldest continuously operating salt pans on the continent, in production since the 14th century under the Ragusan Republic. Ston's oysters, grown in the extraordinarily clean waters of Mali Ston Bay where mountain springs meet the Adriatic, are considered among the finest in Europe. And Stonska torta — the extraordinary pasta cake — has been made here for centuries."
+      }
+    ]
+  }
+};
+
+function openRegion(key) {
+  const data = regionFacts[key];
+  if (!data) return;
+  
+  document.getElementById('modalHeroImg').src = data.img;
+  document.getElementById('modalHeroImg').alt = data.name;
+  document.getElementById('modalRegionName').textContent = data.name;
+  document.getElementById('modalRegionSub').textContent = data.sub;
+  
+  const body = document.getElementById('modalBody');
+  body.innerHTML = data.facts.map(f => `
+    <div class="modal-fact">
+      <div class="modal-fact-title">${f.title}</div>
+      <div class="modal-fact-body">${f.body}</div>
+    </div>
+  `).join('');
+  
+  const overlay = document.getElementById('regionModal');
+  overlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('regionModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function closeRegionModal(e) {
+  if (e.target === document.getElementById('regionModal')) closeModal();
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
+
 </body>
 </html>
