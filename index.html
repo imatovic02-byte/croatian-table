@@ -137,7 +137,7 @@ section{padding:96px 32px}
   margin-top:56px;border-radius:14px;overflow:hidden}
 @media(max-width:900px){.regions-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.regions-grid{grid-template-columns:1fr}}
-.reg-card{position:relative;height:280px;overflow:hidden;cursor:default}
+.reg-card{position:relative;height:280px;overflow:hidden;cursor:pointer}
 .reg-card img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
 .reg-card:hover img{transform:scale(1.07)}
 .reg-card::after{content:'';position:absolute;inset:0;
@@ -374,42 +374,42 @@ footer{background:var(--ink);border-top:1px solid rgba(196,153,58,.1);padding:56
       <p class="sec-body">From the truffle forests of Istria to the paprika-fired plains of Slavonia — each region is a complete culinary universe.</p>
     </div>
     <div class="regions-grid">
-      <div class="reg-card reveal">
+      <div class="reg-card reveal" onclick="openRegion('istria')" style="cursor:pointer">
         <img src="istria.jpg" alt="Pula Arena Istria" loading="lazy">
         <div class="reg-content">
                     <div class="reg-name">Istria &amp; Kvarner</div>
           <div class="reg-tag">Truffles · Scampi · Malvazija</div>
         </div>
       </div>
-      <div class="reg-card reveal d1">
+      <div class="reg-card reveal d1" onclick="openRegion('dalmatia')" style="cursor:pointer">
         <img src="dalmatia.jpg" alt="Dalmatian island aerial view" loading="lazy">
         <div class="reg-content">
                     <div class="reg-name">Dalmatia</div>
           <div class="reg-tag">Peka · Brudet · Gemišt</div>
         </div>
       </div>
-      <div class="reg-card reveal d2">
+      <div class="reg-card reveal d2" onclick="openRegion('zagreb')" style="cursor:pointer">
         <img src="zagreb.jpg" alt="Zagreb Dolac market" loading="lazy">
         <div class="reg-content">
                     <div class="reg-name">Zagreb &amp; Zagorje</div>
           <div class="reg-tag">Štrukli · Mlinci · Kremšnita</div>
         </div>
       </div>
-      <div class="reg-card reveal">
+      <div class="reg-card reveal" onclick="openRegion('lika')" style="cursor:pointer">
         <img src="lika.jpg" alt="Plitvice Lakes Lika" loading="lazy">
         <div class="reg-content">
                     <div class="reg-name">Lika</div>
           <div class="reg-tag">Lamb · Potatoes · Smoked Meats</div>
         </div>
       </div>
-      <div class="reg-card reveal d1">
+      <div class="reg-card reveal d1" onclick="openRegion('slavonia')" style="cursor:pointer">
         <img src="slavonia.jpg" alt="Slavonian golden fields sunset" loading="lazy">
         <div class="reg-content">
                     <div class="reg-name">Slavonija</div>
           <div class="reg-tag">Paprika · River Fish · Čobanac</div>
         </div>
       </div>
-      <div class="reg-card reveal d2">
+      <div class="reg-card reveal d2" onclick="openRegion('dubrovnik')" style="cursor:pointer">
         <img src="dubrovnik.jpg" alt="Dubrovnik old city fountain" loading="lazy">
         <div class="reg-content">
                     <div class="reg-name">Dubrovnik Region</div>
