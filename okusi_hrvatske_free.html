@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Okusi Hrvatske – Tastes of Croatia</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Raleway:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --terra:#B8421E;--terra-dk:#7a2c10;--terra-lt:#d4694a;
+  --cream:#F5EDD8;--cream-dk:#E8D9BB;--cream-dkr:#D4C09A;
+  --stone:#8C7B65;--stone-lt:#b5a68e;
+  --navy:#1C2B45;--navy-lt:#2d4268;
+  --gold:#C4993A;--gold-lt:#E0BF6A;--gold-vlg:#f5e4b0;
+  --olive:#5C6B2E;--olive-lt:#7a8f3e;
+  --white:#FEFAF2;--text:#241A0E;--textm:#4a3520;--textl:#7a6045;
+  --ink:#1a1208;
+  --shadow:rgba(36,26,14,.15);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'EB Garamond',Georgia,serif;background:var(--cream);color:var(--text);line-height:1.75;overflow-x:hidden}
+
+/* ── HERO ── */
+.hero{min-height:100vh;background:
+  linear-gradient(170deg,rgba(28,43,69,.9) 0%,rgba(122,44,16,.82) 55%,rgba(92,107,46,.65) 100%),
+  url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1600&q=80') center/cover;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:60px 24px;position:relative}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:100px;
+  background:linear-gradient(to bottom,transparent,var(--cream))}
+.hero-badge{font-family:'Raleway',sans-serif;font-size:.7rem;font-weight:800;
+  letter-spacing:.45em;text-transform:uppercase;color:var(--gold-lt);
+  border:1px solid rgba(200,168,75,.5);padding:7px 22px;border-radius:40px;margin-bottom:32px}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(3.5rem,9vw,8rem);
+  font-weight:900;color:var(--white);line-height:1;text-shadow:0 6px 40px rgba(0,0,0,.5)}
+.hero h1 em{color:var(--gold-lt);font-style:italic;display:block}
+.hero-sub{font-family:'EB Garamond',serif;font-size:clamp(1rem,2.5vw,1.4rem);
+  color:rgba(254,250,242,.82);margin-top:20px;font-style:italic}
+.hero-pills{margin-top:32px;display:flex;gap:28px;flex-wrap:wrap;justify-content:center}
+.hero-pills span{font-family:'Raleway',sans-serif;font-size:.78rem;font-weight:600;
+  color:var(--cream);display:flex;align-items:center;gap:8px}
+.dot{width:5px;height:5px;background:var(--gold);border-radius:50%;display:inline-block}
+
+/* ── NAV ── */
+.nav{position:sticky;top:0;z-index:200;background:var(--navy);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 20px;box-shadow:0 2px 24px rgba(0,0,0,.35)}
+.nav-brand{font-family:'Playfair Display',serif;color:var(--gold-lt);
+  font-size:.95rem;font-weight:700;padding:13px 0;white-space:nowrap;flex-shrink:0}
+.nav-links{display:flex;overflow-x:auto;scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{font-family:'Raleway',sans-serif;font-size:.62rem;font-weight:700;
+  letter-spacing:.07em;text-transform:uppercase;color:rgba(254,250,242,.65);
+  text-decoration:none;padding:16px 10px;white-space:nowrap;
+  border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.nav-links a:hover{color:var(--gold-lt);border-bottom-color:var(--gold)}
+
+/* ── PAGE SECTIONS ── */
+.page-section{max-width:960px;margin:0 auto;padding:70px 32px}
+.sec-eyebrow{font-family:'Raleway',sans-serif;font-size:.68rem;font-weight:800;
+  letter-spacing:.45em;text-transform:uppercase;color:var(--terra);margin-bottom:14px}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);
+  color:var(--navy);line-height:1.15;margin-bottom:24px}
+.sec-body{font-size:1.05rem;color:var(--textm);line-height:1.9;margin-bottom:16px}
+
+/* ── REGION BAND ── */
+.region-band{background:var(--navy);padding:72px 32px}
+.region-band-inner{max-width:1100px;margin:0 auto}
+.region-band .sec-eyebrow{color:var(--gold-lt)}
+.region-band .sec-title{color:var(--white);margin-bottom:48px;text-align:center}
+.region-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+
+.region-card{background:rgba(255,255,255,.06);border:1px solid rgba(196,153,58,.2);
+  border-radius:14px;padding:28px 24px;transition:transform .3s,background .3s;cursor:pointer}
+.region-card:hover{transform:translateY(-3px);background:rgba(196,153,58,.1)}
+.region-card-top{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.region-icon{font-size:2rem}
+.region-card-name{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--gold-lt)}
+.region-card-geography{font-family:'Raleway',sans-serif;font-size:.68rem;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;color:rgba(254,250,242,.45);margin-top:2px}
+.region-card-desc{font-size:.9rem;color:rgba(254,250,242,.7);line-height:1.65;
+  font-family:'EB Garamond',serif}
+.region-card-ingredients{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tag{font-family:'Raleway',sans-serif;font-size:.6rem;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:20px;
+  background:rgba(196,153,58,.15);color:var(--gold-lt);border:1px solid rgba(196,153,58,.25)}
+
+/* ── TECHNIQUES ── */
+.techniques-section{background:var(--cream-dk);padding:72px 32px}
+.techniques-inner{max-width:960px;margin:0 auto}
+.technique-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:40px}
+.technique-card{background:var(--white);border-radius:14px;padding:28px 24px;
+  border-left:4px solid var(--gold);box-shadow:0 2px 16px var(--shadow)}
+.technique-icon{font-size:2rem;margin-bottom:12px}
+.technique-title{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--navy);margin-bottom:10px}
+.technique-body{font-size:.92rem;color:var(--textm);line-height:1.8}
+
+/* ── RECIPES WRAPPER ── */
+.recipes-wrapper{max-width:960px;margin:0 auto;padding:0 32px 80px}
+
+/* ── CHAPTER HEADING ── */
+.chapter{margin:60px 0 0;page-break-before:always}
+.chapter:first-of-type{page-break-before:avoid}
+.chapter-header{display:flex;align-items:center;gap:16px;padding:22px 28px;
+  border-radius:14px;margin-bottom:4px}
+.chapter-icon{font-size:2rem}
+.chapter-name{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--white)}
+.chapter-sub{font-family:'Raleway',sans-serif;font-size:.68rem;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;color:rgba(254,250,242,.6);margin-top:3px}
+
+.ch-istria   .chapter-header{background:linear-gradient(135deg,#1C3A5A,#2d5986)}
+.ch-dalmatia .chapter-header{background:linear-gradient(135deg,#7a2010,#b03520)}
+.ch-zagreb   .chapter-header{background:linear-gradient(135deg,#3a1a5a,#6a3a90)}
+.ch-lika     .chapter-header{background:linear-gradient(135deg,#1a3a1a,#2d6b2d)}
+.ch-slavonia .chapter-header{background:linear-gradient(135deg,#5c2a00,#9b4500)}
+.ch-dubrovnik .chapter-header{background:linear-gradient(135deg,#1a4a3a,#1a7a5a)}
+.ch-sweets   .chapter-header{background:linear-gradient(135deg,#6b3a00,#c8842a)}
+
+/* ── RECIPE CARD ── */
+.recipe{background:var(--white);border-radius:16px;overflow:hidden;
+  margin-bottom:32px;box-shadow:0 3px 24px var(--shadow);page-break-inside:avoid}
+.recipe-top{display:grid;grid-template-columns:280px 1fr;min-height:200px}
+@media(max-width:680px){.recipe-top{grid-template-columns:1fr}}
+
+.food-card{height:100%;min-height:200px;display:flex;align-items:center;
+  justify-content:center;flex-direction:column;gap:10px;position:relative;overflow:hidden}
+.food-card::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 35% 30%,rgba(255,255,255,.15),transparent 65%)}
+.food-emoji{font-size:4rem;filter:drop-shadow(0 4px 12px rgba(0,0,0,.35));z-index:1}
+.food-dish-name{font-family:'Playfair Display',serif;font-size:.95rem;font-style:italic;
+  color:rgba(255,255,255,.85);text-shadow:0 2px 8px rgba(0,0,0,.4);z-index:1;
+  text-align:center;padding:0 12px}
+
+.recipe-header{padding:22px 24px 16px;border-bottom:1px solid var(--cream-dk)}
+.recipe-num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;
+  color:var(--terra);opacity:.35;line-height:1;margin-bottom:4px}
+.recipe-name{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--navy);
+  line-height:1.15;margin-bottom:2px}
+.recipe-phonetic{font-family:'EB Garamond',serif;font-size:.95rem;color:var(--stone);
+  font-style:italic;margin-bottom:8px}
+.recipe-tagline{font-family:'EB Garamond',serif;font-size:1rem;color:var(--textl);
+  font-style:italic;line-height:1.5;margin-bottom:14px}
+.recipe-pills{display:flex;gap:8px;flex-wrap:wrap}
+.rpill{font-family:'Raleway',sans-serif;font-size:.6rem;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:20px;
+  background:var(--cream-dk);color:var(--textm)}
+
+.recipe-body{padding:22px 24px}
+.recipe-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:28px;margin-bottom:22px}
+@media(max-width:600px){.recipe-grid{grid-template-columns:1fr}}
+
+.recipe-body h3{font-family:'Playfair Display',serif;font-size:1rem;color:var(--terra-dk);
+  margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.ing-list{list-style:none}
+.ing-list li{padding:6px 0;border-bottom:1px solid var(--cream-dk);font-size:.9rem;
+  display:flex;justify-content:space-between;gap:10px;color:var(--textm)}
+.ing-list li:last-child{border-bottom:none}
+.amt{font-weight:600;color:var(--terra);white-space:nowrap;font-family:'Raleway',sans-serif;font-size:.85rem}
+.steps{list-style:none;counter-reset:s}
+.steps li{counter-increment:s;display:flex;gap:12px;margin-bottom:12px;
+  font-size:.92rem;color:var(--textm);line-height:1.72}
+.steps li::before{content:counter(s);min-width:26px;height:26px;background:var(--terra);
+  color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;font-weight:700;font-size:.82rem;
+  flex-shrink:0;margin-top:2px}
+
+/* NUTRITION */
+.nutr{background:var(--navy);border-radius:12px;padding:18px 22px;margin-bottom:16px}
+.nutr h3{font-family:'Playfair Display',serif;color:var(--gold-lt);font-size:.92rem;margin-bottom:12px}
+.nutr-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+@media(max-width:500px){.nutr-grid{grid-template-columns:repeat(3,1fr)}}
+.ni{text-align:center;background:rgba(255,255,255,.07);border-radius:8px;padding:10px 4px}
+.nv{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--white);display:block}
+.nl{font-family:'Raleway',sans-serif;font-size:.58rem;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(254,250,242,.5);display:block;margin-top:2px}
+
+/* TIP & DYK */
+.tip{background:linear-gradient(135deg,#fdf3e0,#f0e0c0);border-left:4px solid var(--gold);
+  border-radius:0 10px 10px 0;padding:14px 18px;margin-bottom:12px}
+.tip strong,.dyk strong,.tradition strong,.note strong{font-family:'Raleway',sans-serif;
+  font-size:.64rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;display:block;margin-bottom:5px}
+.tip strong{color:var(--terra)}
+.tip p,.dyk p,.tradition p,.note p{font-size:.88rem;color:var(--textm);line-height:1.75}
+.dyk{background:linear-gradient(135deg,#edf3f8,#d8e8f2);border-left:4px solid var(--navy);
+  border-radius:0 10px 10px 0;padding:14px 18px;margin-bottom:12px}
+.dyk strong{color:var(--navy)}
+.tradition{background:linear-gradient(135deg,#f0ede0,#e0d8c0);border-left:4px solid var(--olive);
+  border-radius:0 10px 10px 0;padding:14px 18px;margin-bottom:12px}
+.tradition strong{color:var(--olive)}
+.note{background:linear-gradient(135deg,#f8f0e8,#ecd8c0);border-left:4px solid var(--terra-lt);
+  border-radius:0 10px 10px 0;padding:14px 18px;margin-bottom:12px}
+.note strong{color:var(--terra-dk)}
+
+/* FOOTER */
+footer{background:var(--ink);color:rgba(254,250,242,.55);text-align:center;
+  padding:50px 32px;font-family:'Raleway',sans-serif;font-size:.82rem;line-height:1.9}
+footer h3{font-family:'Playfair Display',serif;color:var(--gold-lt);font-size:1.5rem;margin-bottom:12px}
+
+/* DIVIDER */
+.divider{display:flex;align-items:center;gap:16px;margin:48px 0 0}
+.divider::before,.divider::after{content:'';flex:1;height:1px;
+  background:linear-gradient(to right,transparent,var(--cream-dkr),transparent)}
+.divider span{color:var(--terra);font-size:1rem}
+
+/* PRINT */
+@media print{
+  *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
+  .nav,.hero-pills,.hero::after{display:none}
+  .hero{min-height:auto;padding:40px 24px;page-break-after:always}
+  .hero h1{font-size:4rem}
+  body{font-size:11pt;background:white}
+  .chapter{page-break-before:always}
+  .chapter:first-of-type{page-break-before:avoid}
+  .recipe{page-break-inside:avoid;box-shadow:none;border:1px solid #ddd;margin-bottom:20px}
+  .recipe-top{grid-template-columns:200px 1fr}
+  .food-card{min-height:160px}
+  .food-emoji{font-size:3rem}
+  .nutr{background:#1C2B45 !important}
+  .chapter-header{-webkit-print-color-adjust:exact}
+  .region-band,.techniques-section{page-break-inside:avoid}
+  a{text-decoration:none;color:inherit}
+  .nav{display:none !important}
+}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s}
+.fade-in.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">✦ A Complete Culinary Journey ✦</div>
+  <h1>Okusi<em>Hrvatske</em></h1>
+  <p class="hero-sub">Tastes of Croatia — 20 Classic Dishes, 6 Regions, One Extraordinary Table</p>
+  <div class="hero-pills">
+    <span><span class="dot"></span>Sequential Recipes</span>
+    <span><span class="dot"></span>6 Regions + Sweets</span>
+    <span><span class="dot"></span>Traditions & Techniques</span>
+    <span><span class="dot"></span>Print Ready</span>
+  </div>
+</section>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-brand">🇭🇷 Okusi Hrvatske</div>
+  <div class="nav-links">
+    <a href="#intro">Intro</a>
+    <a href="#techniques">Techniques</a>
+    <a href="#istria">Istria &amp; Kvarner</a>
+    <a href="#dalmatia">Dalmatia</a>
+    <a href="#zagreb">Zagreb</a>
+    <a href="#lika">Lika</a>
+    <a href="#slavonia">Slavonija</a>
+    <a href="#dubrovnik">Dubrovnik</a>
+    <a href="#sweets">Sweets</a>
+  </div>
+</nav>
+
+<!-- INTRO -->
+<section class="page-section" id="intro">
+  <div class="sec-eyebrow">About This Cookbook</div>
+  <h2 class="sec-title">Where Mountains Meet the Sea</h2>
+  <p class="sec-body">Croatian cuisine is one of Europe's best-kept secrets — a magnificent tapestry woven from centuries of Mediterranean, Central European, Ottoman and Austro-Hungarian influence. From the sun-drenched shores of Dalmatia where olive oil flows freely, to the fertile plains of Slavonia where paprika-spiced stews fill copper cauldrons over open fires, Croatia offers an extraordinary diversity of flavour in a country smaller than Ireland.</p>
+  <p class="sec-body">This cookbook gathers Croatia's most beloved dishes — those that appear on grandmothers' tables, at village feasts, wedding banquets, and Sunday lunches that last until dusk. Each recipe includes phonetic pronunciation, exact measurements, step-by-step instructions, full nutrition information, chef's tips, cultural context, and the traditions and stories that make Croatian food so much more than just ingredients.</p>
+  <p class="sec-body"><em>Dobar tek!</em> — Bon appétit!</p>
+</section>
+
+<!-- REGIONS -->
+<section class="region-band">
+  <div class="region-band-inner">
+    <div class="sec-eyebrow" style="text-align:center;color:var(--gold-lt)">Six Culinary Worlds</div>
+    <h2 class="sec-title">The Regions of Croatia</h2>
+    <div class="region-grid">
+
+      <div class="region-card">
+        <div class="region-card-top">
+          <div class="region-icon">🍄</div>
+          <div><div class="region-card-name">Istria &amp; Kvarner</div><div class="region-card-geography">Northwest Peninsula + Gulf Islands</div></div>
+        </div>
+        <p class="region-card-desc">A triangular peninsula jutting into the Adriatic, Istria enjoys a mild Mediterranean climate tempered by cool Bora winds from the Dinaric Alps. The red-iron soil of the interior nurtures olive groves, vineyards and oak forests where black and white truffles grow in extraordinary abundance. The Kvarner Gulf, sheltered between Istria and the mainland, produces the world-renowned Kvarner scampi in its cold, deep, plankton-rich waters. The cuisine here shows strong Venetian influence — pasta-making, polenta, and seafood are everyday staples.</p>
+        <div class="region-card-ingredients">
+          <span class="tag">White &amp; Black Truffles</span><span class="tag">Malvazija Wine</span>
+          <span class="tag">Teran Wine</span><span class="tag">Kvarner Scampi</span>
+          <span class="tag">Istrian Olive Oil</span><span class="tag">Fuži Pasta</span>
+          <span class="tag">Boškarin Beef</span>
+        </div>
+      </div>
+
+      <div class="region-card">
+        <div class="region-card-top">
+          <div class="region-icon">☀️</div>
+          <div><div class="region-card-name">Dalmatia</div><div class="region-card-geography">Central &amp; South Adriatic Coast + Islands</div></div>
+        </div>
+        <p class="region-card-desc">Stretching over 600 kilometres of jagged coastline and dotted with more than 1,200 islands, Dalmatia enjoys a classic Mediterranean climate — long hot summers, mild winters, and over 2,700 hours of sunshine per year. The food is defined by extraordinary simplicity: the very best fish, the finest olive oil, and the patience to cook things slowly. Ancient cooking under the peka bell, centuries of fishing tradition, and UNESCO-listed intangible heritage make Dalmatia one of Europe's most complete culinary destinations.</p>
+        <div class="region-card-ingredients">
+          <span class="tag">Dalmatian Olive Oil</span><span class="tag">Adriatic Fish</span>
+          <span class="tag">Plavac Mali Wine</span><span class="tag">Pošip Wine</span>
+          <span class="tag">Prošek</span><span class="tag">Sea Salt</span>
+          <span class="tag">Capers &amp; Sage</span>
+        </div>
+      </div>
+
+      <div class="region-card">
+        <div class="region-card-top">
+          <div class="region-icon">🥐</div>
+          <div><div class="region-card-name">Zagreb &amp; Zagorje</div><div class="region-card-geography">Northwestern Croatia, Inland Plains &amp; Hills</div></div>
+        </div>
+        <p class="region-card-desc">The continental heartland of Croatia, Zagreb and the surrounding Zagorje hills enjoy a humid continental climate with four distinct seasons. Rolling green hills, thermal springs and fertile valleys define the landscape. The cuisine here reflects the long Austro-Hungarian imperial presence — elaborate baked goods, cheese pastries, roasted meats and refined café culture. Zagreb was a sophisticated European capital long before the 20th century, and its food reflects centuries of Central European culinary exchange.</p>
+        <div class="region-card-ingredients">
+          <span class="tag">Svježi Sir (Fresh Cheese)</span><span class="tag">Sour Cream</span>
+          <span class="tag">Walnuts &amp; Poppy Seeds</span><span class="tag">Honey</span>
+          <span class="tag">Turkey &amp; Duck</span><span class="tag">Mlinci Pasta</span>
+          <span class="tag">Bermet Vermouth</span>
+        </div>
+      </div>
+
+      <div class="region-card">
+        <div class="region-card-top">
+          <div class="region-icon">🏔️</div>
+          <div><div class="region-card-name">Lika</div><div class="region-card-geography">Central Karst Highlands, 400–1800m Altitude</div></div>
+        </div>
+        <p class="region-card-desc">Lika is Croatia's wild interior — a vast, sparsely populated karst plateau between the Velebit mountain range and the Dinaric Alps, lying at elevations between 400 and 1,800 metres. The harsh continental-alpine climate, with long cold winters and short summers, produces an exceptional pastoral tradition. Lika lamb (Ličko janje) grazes on wild thyme, sage and mountain herbs, giving the meat a flavour found nowhere else on earth. Isolation has preserved ancient cooking techniques largely unchanged for centuries.</p>
+        <div class="region-card-ingredients">
+          <span class="tag">Lika Lamb (PDO)</span><span class="tag">Wild Mountain Herbs</span>
+          <span class="tag">Smoked Meats</span><span class="tag">Sour Cream</span>
+          <span class="tag">Potatoes</span><span class="tag">Dried Beans</span>
+          <span class="tag">Forest Mushrooms</span>
+        </div>
+      </div>
+
+      <div class="region-card">
+        <div class="region-card-top">
+          <div class="region-icon">🌶️</div>
+          <div><div class="region-card-name">Slavonija</div><div class="region-card-geography">Eastern Pannonian Plain, Bordering Hungary &amp; Serbia</div></div>
+        </div>
+        <p class="region-card-desc">Slavonia is Croatia's breadbasket — a vast, flat Pannonian plain fed by the Sava, Drava and Danube rivers. The continental climate with hot summers and cold winters suits wheat, corn, sunflowers and above all the famous kapija pepper, the backbone of Slavonian cuisine. The rich agricultural land and river fishing culture have created a cuisine that is bold, generous and unapologetically spiced. The annual kolinje pig slaughter in November is the region's most important culinary tradition, bringing entire villages together.</p>
+        <div class="region-card-ingredients">
+          <span class="tag">Sweet &amp; Hot Paprika</span><span class="tag">Carp &amp; Catfish</span>
+          <span class="tag">Kapija Pepper</span><span class="tag">Graševina Wine</span>
+          <span class="tag">Sunflower Oil</span><span class="tag">Smoked Pork</span>
+          <span class="tag">River Fish</span>
+        </div>
+      </div>
+
+      <div class="region-card">
+        <div class="region-card-top">
+          <div class="region-icon">🏰</div>
+          <div><div class="region-card-name">Dubrovnik Region</div><div class="region-card-geography">Southern Dalmatia, Pelješac, Hvar &amp; Neretva Valley</div></div>
+        </div>
+        <p class="region-card-desc">The southernmost tip of Croatia, including Dubrovnik, the Pelješac Peninsula, and the Neretva River delta, enjoys the most Mediterranean climate in all of Croatia — figs, citrus, pomegranates and mandarins grow abundantly. For nearly five centuries (1358–1808), Dubrovnik was the independent Ragusan Republic, one of the wealthiest trading states in the world. Spices from the Orient, sugar, dried cod from Norway, and rose water all arrived regularly in its port, shaping a uniquely refined and complex cuisine utterly unlike the rest of Croatia.</p>
+        <div class="region-card-ingredients">
+          <span class="tag">Dingač Wine</span><span class="tag">Rozolin Liqueur</span>
+          <span class="tag">Oriental Spices</span><span class="tag">Dried Cod (Bakalar)</span>
+          <span class="tag">Ston Oysters &amp; Mussels</span><span class="tag">Citrus &amp; Figs</span>
+          <span class="tag">Pelješac Lamb</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TECHNIQUES -->
+<section class="techniques-section" id="techniques">
+  <div class="techniques-inner">
+    <div class="sec-eyebrow" style="color:var(--terra)">Essential Knowledge</div>
+    <h2 class="sec-title">Croatian Cooking Techniques &amp; Traditions</h2>
+    <p class="sec-body">Understanding a few key techniques and cultural contexts transforms these recipes from instructions into living tradition.</p>
+    <div class="technique-grid">
+
+      <div class="technique-card">
+        <div class="technique-icon">🐟</div>
+        <div class="technique-title">Why Dried Cod (Bakalar) in a Land of Fresh Fish?</div>
+        <p class="technique-body">It seems paradoxical: Croatia has one of the most fish-rich coastlines in the Mediterranean, yet dried Norwegian salt cod (bakalar) became the most important fish in Croatian culinary tradition. The answer is the Catholic Church. For centuries, Fridays, Advent, Lent (40 days before Easter) and numerous saints' feast days were meatless — but fish was permitted. Fresh fish spoiled fast and was expensive inland. Dried salt cod, preserved for months, was cheap, non-perishable and available everywhere. It became so embedded in tradition that even today, on the Dalmatian and Dubrovnik coast, Christmas Eve dinner is bakalar — not fresh fish — even though the sea is metres away.</p>
+      </div>
+
+      <div class="technique-card">
+        <div class="technique-icon">🧂</div>
+        <div class="technique-title">How to Salt and Preserve Sardines (Srdele)</div>
+        <p class="technique-body">Salting sardines (srdele u soli) is one of the oldest food preservation techniques in Croatia, practised along the entire Adriatic coast for millennia. Fresh sardines are layered in a wooden barrel alternating with coarse sea salt — one layer of fish, one layer of salt, head-to-tail in rows. The barrel is weighted with a stone, sealed and left in a cool, dark place for a minimum of 3 months, ideally 6. The fish cure in their own juices and the salt, developing a deep, complex anchovy-like flavour. Before eating, rinse well under cold water and peel off the skin. Salted sardines are eaten on bread with olive oil and raw onion, grilled briefly, or used to season sauces. The barrels of sardines that sustained coastal families through hard winters are now a delicacy served in the finest restaurants in Split and Dubrovnik.</p>
+      </div>
+
+      <div class="technique-card">
+        <div class="technique-icon">🔔</div>
+        <div class="technique-title">Cooking Under the Peka</div>
+        <p class="technique-body">The peka is Croatia's most ancient and revered cooking method — a heavy cast-iron or terracotta bell-shaped lid placed over food in a shallow dish. Glowing wood embers are heaped on top and around the sides, creating an oven-like environment that roasts everything simultaneously from above and below. The result is meat and vegetables that are incomparably juicy inside and caramelised outside, infused with wood smoke. The technique predates metal ovens by thousands of years. The golden rule: never lift the peka during cooking. Every time you peek, you lose precious steam and heat. A proper peka requires patience — 2 to 3 hours minimum — and the willingness to tend the fire. Restaurants that serve it require 24 hours advance notice. It cannot be rushed.</p>
+      </div>
+
+      <div class="technique-card">
+        <div class="technique-icon">🌶️</div>
+        <div class="technique-title">The Art of Slavonian Paprika</div>
+        <p class="technique-body">Paprika is to Slavonia what olive oil is to Dalmatia — it defines and dominates the entire cuisine. Slavonian paprika is made from the kapija pepper, air-dried and ground on stone mills. The key technique in every Slavonian stew is to add the paprika off the heat: remove the pot from the flame, add the paprika and stir rapidly for 30 seconds, then return to heat. Paprika that hits hot oil burns instantly and turns bitter, ruining the dish. Slavonians blend sweet (slatka) and hot (ljuta) paprika to achieve a balanced warmth that lingers on the palate without overwhelming it. The finest paprika is made from peppers dried slowly in attic rooms — never in the sun, which bleaches the colour and diminishes the flavour.</p>
+      </div>
+
+      <div class="technique-card">
+        <div class="technique-icon">🍝</div>
+        <div class="technique-title">Hand-Rolling Pasta: Fuži and Šurlice</div>
+        <p class="technique-body">Croatia has its own ancient pasta traditions predating Italian influence. Fuži, from Istria, are made by cutting egg-dough into small squares and rolling each diagonally around a thin stick to form a hollow quill. Šurlice, from the island of Krk, are made by rolling a small piece of dough around a knitting needle to create a long, narrow tube. Both shapes have hollow centres specifically designed to trap thick sauces — ragù, truffle cream, or the braising juices of slow-cooked meat. The technique requires clean, dry hands, a well-floured surface and patience. The dough must rest fully — 30 minutes minimum — before rolling, otherwise it tears. These pastas are a point of tremendous local pride: in Istria and on Krk, factory-made pasta is considered a poor substitute.</p>
+      </div>
+
+      <div class="technique-card">
+        <div class="technique-icon">🐄</div>
+        <div class="technique-title">The Kolinje — Slavonian Pig Slaughter</div>
+        <p class="technique-body">Kolinje (the pig slaughter) is Slavonia's most important annual event — a tradition that has shaped the region's cuisine, social structure and cultural identity for centuries. Held in November and December when temperatures drop below freezing (essential for safe meat preservation), kolinje is a multi-day community celebration. Neighbours gather before dawn, bringing their own knives and expertise. Every part of the pig is used — meat becomes sausages and roasts, fat is rendered into lard, organs are cooked the same day, trotters become aspic, and blood becomes blood sausage (krvavica). The event involves enormous quantities of food and wine, music playing all day, and the passing of skills from elders to the young. Kolinje is not just about food — it is about community survival, shared labour, and the rhythms of rural life that still pulse beneath modern Croatia.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- RECIPES -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="recipes-wrapper">
+
+<!-- ═══ ISTRIA & KVARNER ═══ -->
+<div class="chapter ch-istria" id="istria">
+  <div class="chapter-header">
+    <div class="chapter-icon">🍄</div>
+    <div><div class="chapter-name">Istria &amp; Kvarner</div>
+    <div class="chapter-sub">Truffles · Maneštra · Fritaja · Malvazija · Teran</div></div>
+  </div>
+</div>
+
+<!-- R1 FUŽI -->
+<article class="recipe fade-in">
+  <div class="recipe-top">
+    <div class="food-card" style="padding:0;overflow:hidden;background:#111">
+      <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=600&q=80" alt="Pasta with truffles" style="width:100%;height:100%;object-fit:cover;display:block;min-height:200px">
+    </div>
+    <div class="recipe-header">
+      <div class="recipe-num">01</div>
+      <div class="recipe-name">Fuži s Tartufima</div>
+      <div class="recipe-phonetic">FOO-zhee s tar-TOO-fee-mah</div>
+      <div class="recipe-tagline">Hand-rolled Istrian pasta with white truffles — the jewel of Croatian gastronomy</div>
+      <div class="recipe-pills"><span class="rpill">⏱ 60 min</span><span class="rpill">👥 4</span><span class="rpill">★★★☆☆</span><span class="rpill">🍷 Malvazija Istarska</span></div>
+    </div>
+  </div>
+  <div class="recipe-body">
+    <div class="recipe-grid">
+      <div><h3>🧅 Ingredients</h3><ul class="ing-list">
+        <li><span>Flour type 00</span><span class="amt">300 g</span></li>
+        <li><span>Eggs</span><span class="amt">3 large</span></li>
+        <li><span>Olive oil, salt</span><span class="amt">1 tbsp / pinch</span></li>
+        <li><span>Fresh white or black truffle</span><span class="amt">20–30 g</span></li>
+        <li><span>Or: quality truffle paste</span><span class="amt">2–3 tbsp</span></li>
+        <li><span>Butter (high quality)</span><span class="amt">60 g</span></li>
+        <li><span>Heavy cream</span><span class="amt">150 ml</span></li>
+        <li><span>Parmigiano, freshly grated</span><span class="amt">60 g</span></li>
+        <li><span>Garlic clove</span><span class="amt">1</span></li>
+        <li><span>Salt and white pepper</span><span class="amt">to taste</span></li>
+      </ul></div>
+      <div><h3>👨‍🍳 Instructions</h3><ol class="steps">
+        <li>Mound flour on a board, make a well. Add eggs, oil and salt. Mix from centre outward and knead 12 minutes until smooth and elastic. Wrap and rest 30 minutes — this step is not optional.</li>
+        <li>Roll dough to 3mm thickness. Cut into 5cm squares. To shape fuži: roll each square diagonally around a thin stick or pen, pressing both ends firmly to seal into a hollow quill. Dust generously with flour.</li>
+        <li>Melt butter over low heat. Infuse a crushed garlic clove 2 minutes, then discard it. Add cream and bring to a very gentle simmer.</li>
+        <li>Cook fuži in abundantly salted boiling water 3–4 minutes until al dente. Reserve 1 cup pasta water before draining.</li>
+        <li>Toss fuži in cream sauce over medium heat, adding pasta water gradually to achieve a silky, flowing consistency. Add half the Parmigiano and toss again.</li>
+        <li>Plate immediately in warm bowls. Shave or finely grate fresh truffle generously over each portion. Add remaining Parmigiano. Serve at once — truffle's legendary aroma fades within minutes of contact with air.</li>
+      </ol></div>
+    </div>
+    <div class="nutr"><h3>📊 Nutrition per Serving</h3><div class="nutr-grid">
+      <div class="ni"><span class="nv">520</span><span class="nl">Calories</span></div>
+      <div class="ni"><span class="nv">18g</span><span class="nl">Protein</span></div>
+      <div class="ni"><span class="nv">56g</span><span class="nl">Carbs</span></div>
+      <div class="ni"><span class="nv">24g</span><span class="nl">Fat</span></div>
+      <div class="ni"><span class="nv">2g</span><span class="nl">Fibre</span></div>
+      <div class="ni"><span class="nv">340mg</span><span class="nl">Sodium</span></div>
+    </div></div>
+    <div class="tip"><strong>💡 Chef's Tip</strong><p>The fuži shape traps sauce inside each hollow tube — never substitute with another pasta shape for this dish. Plate and serve IMMEDIATELY after adding truffle; the aroma is highly volatile. Warm your serving bowls in advance by filling them with hot water for a minute.</p></div>
+    <div class="dyk"><strong>🏛️ Did You Know?</strong><p>The Motovun Forest in central Istria is one of the world's premier white truffle (Tuber magnatum pico) hunting grounds. Istrian truffles have rivalled those of Alba in international competitions, and the largest truffle ever found in Croatia weighed over 1.3 kg — now in the Guinness World Records. Truffle season (October–December) transforms Istria into a gourmet pilgrimage destination.</p></div>
+  </div>
+</article>
+
+<!-- R2 MANEŠTRA -->
+<article class="recipe fade-in">
+  <div class="recipe-top">
+    <div class="food-card" style="padding:0;overflow:hidden;background:#111">
+      <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80" alt="Bean soup with corn" style="width:100%;height:100%;object-fit:cover;display:block;min-height:200px">
+    </div>
+    <div class="recipe-header">
+      <div class="recipe-num">02</div>
+      <div class="recipe-name">Maneštra od Bobića</div>
+      <div class="recipe-phonetic">mah-NEH-shtrah od BOH-bee-tsah</div>
+      <div class="recipe-tagline">Istria's soul-warming corn and bean soup — humble perfection in a bowl</div>
+      <div class="recipe-pills"><span class="rpill">⏱ 2 hr + overnight soak</span><span class="rpill">👥 6</span><span class="rpill">★★☆☆☆</span><span class="rpill">🍷 Teran</span></div>
+    </div>
+  </div>
+  <div class="recipe-body">
+    <div class="recipe-grid">
+      <div><h3>🧅 Ingredients</h3><ul class="ing-list">
+        <li><span>Dried borlotti beans, soaked overnight</span><span class="amt">300 g</span></li>
+        <li><span>Dried corn (bobići), soaked overnight</span><span class="amt">200 g</span></li>
+        <li><span>Smoked pork ribs or pancetta</span><span class="amt">300 g</span></li>
+        <li><span>Onion, diced</span><span class="amt">1 large</span></li>
+        <li><span>Garlic, crushed</span><span class="amt">4 cloves</span></li>
+        <li><span>Carrots, celery, diced</span><span class="amt">2 each</span></li>
+        <li><span>Canned crushed tomatoes</span><span class="amt">200 g</span></li>
+        <li><span>Istrian extra virgin olive oil</span><span class="amt">50 ml</span></li>
+        <li><span>Fresh parsley, bay leaves</span><span class="amt">bunch + 3</span></li>
+        <li><span>Water or light stock</span><span class="amt">1.5 litres</span></li>
+      </ul></div>
+      <div><h3>👨‍🍳 Instructions</h3><ol class="steps">
+        <li>Drain soaked beans and corn. Place in a large pot with smoked pork ribs and water. Bring to a boil, skim foam carefully, reduce to a steady simmer. Cook 45 minutes.</li>
+        <li>In a separate pan, heat olive oil. Sauté onion, carrots and celery over medium heat for 12 minutes until soft and golden. Add garlic and cook 2 more minutes.</li>
+        <li>Add tomatoes to the soffritto and cook 10 minutes until thickened. Transfer into the bean pot together with bay leaves.</li>
+        <li>Continue simmering everything together for 45–60 minutes until beans and corn are completely tender and the broth is rich and thick.</li>
+        <li>Remove pork ribs, shred all the meat from the bones and return it to the pot. Discard bones. Adjust seasoning generously.</li>
+        <li>Ladle into deep bowls. Drizzle generously with excellent Istrian olive oil. Scatter fresh parsley. Serve with crusty white bread.</li>
+      </ol></div>
+    </div>
+    <div class="nutr"><h3>📊 Nutrition per Serving</h3><div class="nutr-grid">
+      <div class="ni"><span class="nv">360</span><span class="nl">Calories</span></div>
+      <div class="ni"><span class="nv">24g</span><span class="nl">Protein</span></div>
+      <div class="ni"><span class="nv">42g</span><span class="nl">Carbs</span></div>
+      <div class="ni"><span class="nv">10g</span><span class="nl">Fat</span></div>
+      <div class="ni"><span class="nv">12g</span><span class="nl">Fibre</span></div>
+      <div class="ni"><span class="nv">520mg</span><span class="nl">Sodium</span></div>
+    </div></div>
+    <div class="tip"><strong>💡 Chef's Tip</strong><p>This soup improves enormously over 24 hours — make it a day ahead. The smoked pork is essential; without it the soup loses its soul. Dried bobići (field corn) can be replaced with hominy if unavailable. Never add salt until the beans are completely tender — salt hardens the skins.</p></div>
+    <div class="dyk"><strong>🏛️ Did You Know?</strong><p>Maneštra reflects nearly 500 years of Venetian rule over Istria (1267–1797). The word itself is Venetian dialect for minestrone. Local Istrian farmers still cultivate ancient heirloom corn varieties — the same varieties grown on the same hillside fields for generations — giving this humble soup a flavour complexity impossible to replicate elsewhere.</p></div>
+  </div>
+</article>
+
+<!-- R3 FRITAJA -->
+<article class="recipe fade-in">
+  <div class="recipe-top">
+    <div class="food-card" style="padding:0;overflow:hidden;background:#111">
+      <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600&q=80" alt="Scrambled eggs with truffles" style="width:100%;height:100%;object-fit:cover;display:block;min-height:200px">
+    </div>
+    <div class="recipe-header">
+      <div class="recipe-num">03</div>
+      <div class="recipe-name">Fritaja s Tartufima</div>
+      <div class="recipe-phonetic">free-TAH-yah s tar-TOO-fee-mah</div>
+      <div class="recipe-tagline">Istrian truffle scrambled eggs — the simplest and most luxurious breakfast in Croatia</div>
+      <div class="recipe-pills"><span class="rpill">⏱ 13 min</span><span class="rpill">👥 2</span><span class="rpill">★☆☆☆☆</span><span class="rpill">🍷 Malvazija</span></div>
+    </div>
+  </div>
+  <div class="recipe-body">
+    <div class="recipe-grid">
+      <div><h3>🧅 Ingredients</h3><ul class="ing-list">
+        <li><span>Fresh eggs</span><span class="amt">4 large</span></li>
+        <li><span>Fresh truffle or truffle paste</span><span class="amt">10 g / 1 tbsp</span></li>
+        <li><span>Butter</span><span class="amt">30 g</span></li>
+        <li><span>Heavy cream</span><span class="amt">2 tbsp</span></li>
+        <li><span>Salt and white pepper</span><span class="amt">to taste</span></li>
+        <li><span>Fresh chives (optional)</span><span class="amt">small bunch</span></li>
+      </ul></div>
+      <div><h3>👨‍🍳 Instructions</h3><ol class="steps">
+        <li>Whisk eggs with cream, salt and a pinch of white pepper until just combined. Do not over-beat — the goal is a uniform yolk-cream mixture, not a foam.</li>
+        <li>Melt butter in a heavy non-stick pan over the absolute lowest possible heat. The butter should melt slowly without sizzling.</li>
+        <li>Add eggs. Stir very gently and slowly with a flexible spatula, pushing eggs from the edges to the centre in long, slow strokes. Remove from heat while still slightly underdone — they will finish cooking in the residual heat of the pan.</li>
+        <li>Immediately fold in truffle paste or shave fresh truffle directly over the eggs. Serve at once on warm toast, scattered with fresh chives.</li>
+      </ol></div>
+    </div>
+    <div class="nutr"><h3>📊 Nutrition per Serving</h3><div class="nutr-grid">
+      <div class="ni"><span class="nv">310</span><span class="nl">Calories</span></div>
+      <div class="ni"><span class="nv">16g</span><span class="nl">Protein</span></div>
+      <div class="ni"><span class="nv">2g</span><span class="nl">Carbs</span></div>
+      <div class="ni"><span class="nv">26g</span><span class="nl">Fat</span></div>
+      <div class="ni"><span class="nv">0g</span><span class="nl">Fibre</span></div>
+      <div class="ni"><span class="nv">240mg</span><span class="nl">Sodium</span></div>
+    </div></div>
+    <div class="tip"><strong>💡 Chef's Tip</strong><p>Fritaja is Istrian dialect for frittata or scrambled eggs. The secret is extremely low heat and absolute patience — never rush eggs. Even a small amount of truffle paste transforms this into something extraordinary. This is the dish that launched a thousand agritourism breakfasts.</p></div>
+    <div class="dyk"><strong>🏛️ Did You Know?</strong><p>Fritaja s tartufima is served at virtually every konoba (family-run tavern) in Istria during truffle season. It demonstrates the Istrian culinary philosophy that the finest ingredients need the least interference. Many Istrian families make this as a weekday breakfast using truffle paste kept in the pantry year-round.</p></div>
+  </div>
+</article>
+
+<!-- ═══ DALMATIA ═══ -->
+<div class="chapter ch-dalmatia" id="dalmatia">
+  <div class="chapter-header">
+    <div class="chapter-icon">☀️</div>
+    <div><div class="chapter-name">Dalmatia</div>
+    <div class="chapter-sub">Brudet · Soparnik · Dagnje na Buzaru · Orada na Gradele</div></div>
+  </div>
+</div>
+
+<!-- R7 BRUDET -->
+<article class="recipe fade-in">
+  <div class="recipe-top">
+    <div class="food-card" style="padding:0;overflow:hidden;background:#111">
+      <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&q=80" alt="Dalmatian fish stew" style="width:100%;height:100%;object-fit:cover;display:block;min-height:200px">
+    </div>
+    <div class="recipe-header">
+      <div class="recipe-num">04</div>
+      <div class="recipe-name">Brudet</div>
+      <div class="recipe-phonetic">BROO-det</div>
+      <div class="recipe-tagline">The fisherman's ancient stew — a chorus of Adriatic fish in wine and tomato</div>
+      <div class="recipe-pills"><span class="rpill">⏱ 65 min</span><span class="rpill">👥 4</span><span class="rpill">★★★☆☆</span><span class="rpill">🍷 Pošip or Grk</span></div>
+    </div>
+  </div>
+  <div class="recipe-body">
+    <div class="recipe-grid">
+      <div><h3>🧅 Ingredients</h3><ul class="ing-list">
+        <li><span>Mixed Adriatic fish (scorpionfish, monkfish, sea bass)</span><span class="amt">1.5 kg</span></li>
+        <li><span>Onions, finely sliced</span><span class="amt">3 large</span></li>
+        <li><span>Garlic, canned tomatoes</span><span class="amt">5 cloves / 400 g</span></li>
+        <li><span>Dry white wine</span><span class="amt">200 ml</span></li>
+        <li><span>Extra virgin olive oil</span><span class="amt">80 ml</span></li>
+        <li><span>Red wine vinegar</span><span class="amt">2 tbsp</span></li>
+        <li><span>Fresh parsley, bay leaves</span><span class="amt">bunch + 3</span></li>
+        <li><span>Salt and black pepper</span><span class="amt">to taste</span></li>
+        <li><span>Water</span><span class="amt">150 ml</span></li>
+      </ul><p style="font-size:.82rem;color:var(--stone);margin-top:8px;font-style:italic">Serve with polenta or crusty white bread</p></div>
+      <div><h3>👨‍🍳 Instructions</h3><ol class="steps">
+        <li>Clean and gut the fish. Cut larger fish into thick steaks; leave smaller fish whole. Season generously with salt on all sides and set aside for 15 minutes.</li>
+        <li>In a wide, heavy pan, heat olive oil over medium heat. Cook onions very slowly for 20 minutes until deeply golden and almost caramelised — this base is the heart of brudet and cannot be rushed.</li>
+        <li>Add garlic and cook 2 minutes. Add crushed tomatoes, cook 10 minutes until thickened. Add wine, vinegar and bay leaves. Simmer 5 minutes.</li>
+        <li>Add the firmer, denser fish pieces first (monkfish, scorpionfish). Do not stir — brudet must never be stirred, only shaken gently. Add water, cover and simmer 10 minutes.</li>
+        <li>Add the more delicate fish on top. Cover and cook 15 more minutes on very low heat, shaking the pot occasionally. Scatter fresh parsley over the top. Serve immediately in deep bowls.</li>
+      </ol></div>
+    </div>
+    <div class="nutr"><h3>📊 Nutrition per Serving</h3><div class="nutr-grid">
+      <div class="ni"><span class="nv">340</span><span class="nl">Calories</span></div>
+      <div class="ni"><span class="nv">42g</span><span class="nl">Protein</span></div>
+      <div class="ni"><span class="nv">8g</span><span class="nl">Carbs</span></div>
+      <div class="ni"><span class="nv">14g</span><span class="nl">Fat</span></div>
+      <div class="ni"><span class="nv">2g</span><span class="nl">Fibre</span></div>
+      <div class="ni"><span class="nv">520mg</span><span class="nl">Sodium</span></div>
+    </div></div>
+    <div class="tip"><strong>💡 Chef's Tip</strong><p>The golden rule of brudet: NEVER stir, only shake. Stirring breaks the delicate fish apart and turns the stew muddy. Scorpionfish (škarpina) is the most prized addition for its extraordinary flavour. The more varieties of fish in the pot, the richer and more complex the broth.</p></div>
+    <div class="dyk"><strong>🏛️ Did You Know?</strong><p>Brudet was originally made by fishermen aboard their small wooden boats using the smallest, least-sellable fish from the day's catch. What began as poverty food — the dregs of the sea — became over centuries one of the Adriatic coast's most celebrated dishes. Every coastal town from Istria to Dubrovnik has its own version, and fierce arguments about the "correct" method are a beloved local tradition.</p></div>
+  </div>
+</article>
+
+<!-- R11 SOPARNIK -->
+<article class="recipe fade-in">
+  <div class="recipe-top">
+    <div class="food-card" style="padding:0;overflow:hidden;background:#111">
+      <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?w=600&q=80" alt="Soparnik chard flatbread" style="width:100%;height:100%;object-fit:cover;display:block;min-height:200px">
+    </div>
+    <div class="recipe-header">
+      <div class="recipe-num">05</div>
+      <div class="recipe-name">Soparnik</div>
+      <div class="recipe-phonetic">SOH-par-neek</div>
+      <div class="recipe-tagline">UNESCO-protected chard flatbread from the Poljica Republic — ancient, vegan and extraordinary</div>
+      <div class="recipe-pills"><span class="rpill">⏱ 50 min</span><span class="rpill">👥 8</span><span class="rpill">★★☆☆☆</span><span class="rpill">🏛️ UNESCO Listed</span></div>
+    </div>
+  </div>
+  <div class="recipe-body">
+    <div class="recipe-grid">
+      <div><h3>🧅 Ingredients</h3><ul class="ing-list">
+        <li><span>Plain flour type 00</span><span class="amt">500 g</span></li>
+        <li><span>Warm water, olive oil, salt</span><span class="amt">280 ml / 3 tbsp / 1 tsp</span></li>
+        <li><span>Swiss chard, finely chopped — RAW</span><span class="amt">1.2 kg</span></li>
+        <li><span>Garlic, very finely minced</span><span class="amt">6 cloves</span></li>
+        <li><span>Fresh parsley, finely chopped</span><span class="amt">large handful</span></li>
+        <li><span>Spring onions, finely sliced</span><span class="amt">4 stalks</span></li>
+        <li><span>Olive oil (for filling)</span><span class="amt">50 ml</span></li>
+        <li><span>Salt and black pepper</span><span class="amt">to taste</span></li>
+        <li><span>Olive oil + garlic (for finishing)</span><span class="amt">3 tbsp + 2 cloves</span></li>
+      </ul></div>
+      <div><h3>👨‍🍳 Instructions</h3><ol class="steps">
+        <li>Make dough: combine flour and salt, add oil and warm water gradually. Knead for 8 minutes until smooth and slightly elastic. Divide into two equal balls, cover with a cloth, rest 20 minutes.</li>
+        <li>Prepare filling: mix the raw chopped chard with garlic, parsley, spring onions, olive oil, salt and pepper. The chard must be completely raw — do not blanch. Squeeze out any excess liquid firmly.</li>
+        <li>Roll one dough ball on a floured surface to a very thin circle or rectangle, approximately 40cm across. Transfer to a well-oiled baking sheet or peel.</li>
+        <li>Spread chard filling evenly over the entire surface, leaving a 2cm border. Roll the second dough ball to the same size and lay it carefully over the filling. Press and crimp the edges firmly to seal.</li>
+        <li>Bake at 220°C on a preheated pizza stone or heavy baking tray for 18–22 minutes until golden and slightly blistered on top. (Traditionally cooked directly on glowing embers for about 15 minutes, turned once.)</li>
+        <li>Immediately upon removing from the oven, brush generously all over with olive oil and rub vigorously with the cut side of a raw garlic clove. Cut into diamond shapes with a pizza cutter. Serve warm.</li>
+      </ol></div>
+    </div>
+    <div class="nutr"><h3>📊 Nutrition per Piece (1/8)</h3><div class="nutr-grid">
+      <div class="ni"><span class="nv">245</span><span class="nl">Calories</span></div>
+      <div class="ni"><span class="nv">8g</span><span class="nl">Protein</span></div>
+      <div class="ni"><span class="nv">38g</span><span class="nl">Carbs</span></div>
+      <div class="ni"><span class="nv">7g</span><span class="nl">Fat</span></div>
+      <div class="ni"><span class="nv">4g</span><span class="nl">Fibre</span></div>
+      <div class="ni"><span class="nv">280mg</span><span class="nl">Sodium</span></div>
+    </div></div>
+    <div class="tip"><strong>💡 Chef's Tip</strong><p>Soparnik is one of the rare naturally vegan dishes in traditional Croatian cuisine. The key is using RAW chard — cooking it first releases water that will make the dough soggy. Roll the dough as thin as possible without tearing. The garlic rub at the very end is non-negotiable and gives soparnik its signature aroma. Leftover soparnik is excellent cold the next day.</p></div>
+    <div class="dyk"><strong>🏛️ Did You Know?</strong><p>Soparnik from the Poljica region near Split was inscribed on Croatia's UNESCO Intangible Cultural Heritage list in 2021 — one of the few dishes in the world to receive such recognition. It has been made for at least 500 years by the villagers of Poljica, a semi-autonomous republic of free peasants that existed for centuries on the hills above Split. Historically it was Lenten food for the poor; today it is a prized delicacy served at festivals.</p></div>
+  </div>
+</article>
+
+<!-- R12 BUZARA -->
+<article class="recipe fade-in">
+  <div class="recipe-top">
+    <div class="food-card" style="padding:0;overflow:hidden;background:#111">
+      <img src="https://images.unsplash.com/photo-1548365328-8c6db3220f4f?w=600&q=80" alt="Mussels in white wine" style="width:100%;height:100%;object-fit:cover;display:block;min-height:200px">
+    </div>
+    <div class="recipe-header">
+      <div class="recipe-num">06</div>
+      <div class="recipe-name">Dagnje na Buzaru</div>
+      <div class="recipe-phonetic">DAHG-nyeh nah BOO-zah-roo</div>
+      <div class="recipe-tagline">Adriatic mussels in white wine, garlic and parsley — 15 minutes of pure Dalmatian joy</div>
+      <div class="recipe-pills"><span class="rpill">⏱ 30 min</span><span class="rpill">👥 4</span><span class="rpill">★★☆☆☆</span><span class="rpill">🍷 Pošip or Pinot Grigio</span></div>
+    </div>
+  </div>
+  <div class="recipe-body">
+    <div class="recipe-grid">
+      <div><h3>🧅 Ingredients</h3><ul class="ing-list">
+        <li><span>Fresh mussels, scrubbed and de-bearded</span><span class="amt">2 kg</span></li>
+        <li><span>Garlic cloves, finely sliced</span><span class="amt">6 cloves</span></li>
+        <li><span>Dry white wine</span><span class="amt">200 ml</span></li>
+        <li><span>Extra virgin olive oil</span><span class="amt">60 ml</span></li>
+        <li><span>Fresh parsley, finely chopped</span><span class="amt">large bunch</span></li>
+        <li><span>Breadcrumbs</span><span class="amt">2 tbsp</span></li>
+        <li><span>Lemon, salt, black pepper</span><span class="amt">1 lemon / to taste</span></li>
+        <li><span>Fresh chilli (optional)</span><span class="amt">½ small</span></li>
+      </ul></div>
+      <div><h3>👨‍🍳 Instructions</h3><ol class="steps">
+        <li>Discard any mussels that are open and do not close firmly when tapped sharply on the countertop. Scrub shells clean under cold running water and pull off any beards.</li>
+        <li>Heat olive oil in the widest, heaviest pot you own over high heat. Add garlic (and chilli if using) and cook for 1 minute until just golden and fragrant — do not burn it.</li>
+        <li>Add all the mussels at once and pour in the wine immediately. Cover tightly with a lid and cook over high heat for 5–7 minutes, shaking the pot vigorously every minute.</li>
+        <li>When all mussels have opened, scatter the breadcrumbs over the top and toss gently — the breadcrumbs thicken the sauce slightly and add texture. Add fresh parsley and lemon juice. Discard any mussels that have not opened.</li>
+        <li>Serve immediately in deep bowls. This is the most important instruction: provide generous crusty bread for dipping. The broth that collects in the shells and at the bottom of the bowl is liquid gold.</li>
+      </ol></div>
+    </div>
+    <div class="nutr"><h3>📊 Nutrition per Serving</h3><div class="nutr-grid">
+      <div class="ni"><span class="nv">280</span><span class="nl">Calories</span></div>
+      <div class="ni"><span class="nv">24g</span><span class="nl">Protein</span></div>
+      <div class="ni"><span class="nv">12g</span><span class="nl">Carbs</span></div>
+      <div class="ni"><span class="nv">12g</span><span class="nl">Fat</span></div>
+      <div class="ni"><span class="nv">0g</span><span class="nl">Fibre</span></div>
+      <div class="ni"><span class="nv">580mg</span><span class="nl">Sodium</span></div>
+    </div></div>
+    <div class="tip"><strong>💡 Chef's Tip</strong><p>There are two styles of buzara: bijela (white, with breadcrumbs and wine — this recipe) and crvena (red, with tomatoes added). Both are magnificent. Never overcook mussels — they become rubbery within seconds of being done. This dish moves from pan to table in under 20 minutes total.</p></div>
+    <div class="dyk"><strong>🏛️ Did You Know?</strong><p>Mali Ston on the Pelješac Peninsula produces what many consider the finest mussels in the world. The Malostonski Bay, where fresh mountain spring water meets the Adriatic, creates an extraordinarily mineral-rich growing environment. Ston mussels have been farmed since Roman times and are now protected as a geographical indication product. The bay also produces oysters of legendary quality.</p></div>
+  </div>
+</article>
+
+<!-- R13 GRILLED ORADA -->
+<article class="recipe fade-in">
+  <div class="recipe-top">
+    <div class="food-card" style="padding:0;overflow:hidden;background:#111">
+      <img src="https://images.unsplash.com/photo-1534080564583-6be75777b70a?w=600&q=80" alt="Grilled sea bream with chard" style="width:100%;height:100%;object-fit:cover;display:block;min-height:200px">
+    </div>
+    <div class="recipe-header">
+      <div class="recipe-num">07</div>
+      <div class="recipe-name">Orada na Gradele s Blitom</div>
+      <div class="recipe-phonetic">oh-RAH-dah nah GRAH-deh-leh s BLEE-tom</div>
+      <div class="recipe-tagline">Sea bream grilled over charcoal with Swiss chard and potatoes — Dalmatian perfection</div>
+      <div class="recipe-pills"><span class="rpill">⏱ 30 min</span><span class="rpill">👥 4</span><span class="rpill">★★☆☆☆</span><span class="rpill">🍷 Pošip, Grk or Debit</span></div>
+    </div>
+  </div>
+  <div class="recipe-body">
+    <div class="recipe-grid">
+      <div><h3>🧅 Ingredients</h3><ul class="ing-list">
+        <li><span>Whole sea bream (orada), gutted, scaled</span><span class="amt">4 × 400g</span></li>
+        <li><span>Extra virgin olive oil (excellent)</span><span class="amt">80 ml</span></li>
+        <li><span>Coarse sea salt</span><span class="amt">generous</span></li>
+        <li><span>Fresh lemons</span><span class="amt">2</span></li>
+        <li><span>Fresh rosemary and sage</span><span class="amt">few sprigs each</span></li>
+        <li><span>Garlic cloves, sliced</span><span class="amt">3 cloves</span></li>
+        <li><span>Swiss chard</span><span class="amt">400 g</span></li>
+        <li><span>Potatoes, boiled and halved</span><span class="amt">4 medium</span></li>
+        <li><span>Garlic + olive oil (for blitva)</span><span class="amt">3 cloves + 40 ml</span></li>
+      </ul></div>
+      <div><h3>👨‍🍳 Instructions</h3><ol class="steps">
+        <li>Score the fish 3 times diagonally on each side with a sharp knife. Season very generously inside and out with coarse sea salt. Stuff the cavity with rosemary, sage and sliced garlic. Drizzle all over with olive oil.</li>
+        <li>Prepare a charcoal grill with a good bed of glowing embers. Oil the grill grate generously using a cloth dipped in oil held with tongs. The grate must be very hot before the fish goes on.</li>
+        <li>Place fish on the grill over medium-high heat. Grill without touching for 8–10 minutes until the skin releases naturally and is beautifully marked. Turn carefully once with two spatulas. Grill the other side 7–8 minutes.</li>
+        <li>Meanwhile, blanch chard in well-salted boiling water for 3 minutes until wilted. Drain thoroughly. In a wide pan, heat olive oil over medium heat, add sliced garlic and cook until just golden. Add boiled potatoes and chard. Toss everything together over heat, season generously with salt.</li>
+        <li>Transfer fish to a warm plate. Squeeze lemon over the fish. Drizzle with the finest raw olive oil you own. Serve immediately alongside the blitva. Eat at once — this dish waits for no one.</li>
+      </ol></div>
+    </div>
+    <div class="nutr"><h3>📊 Nutrition per Serving</h3><div class="nutr-grid">
+      <div class="ni"><span class="nv">380</span><span class="nl">Calories</span></div>
+      <div class="ni"><span class="nv">42g</span><span class="nl">Protein</span></div>
+      <div class="ni"><span class="nv">22g</span><span class="nl">Carbs</span></div>
+      <div class="ni"><span class="nv">14g</span><span class="nl">Fat</span></div>
+      <div class="ni"><span class="nv">4g</span><span class="nl">Fibre</span></div>
+      <div class="ni"><span class="nv">420mg</span><span class="nl">Sodium</span></div>
+    </div></div>
+    <div class="tip"><strong>💡 Chef's Tip</strong><p>The fish must be absolutely fresh — eyes clear and bright, gills vivid red, flesh firm and springy. Do not move the fish until it releases naturally from the grill — if it sticks, it needs more time. The raw olive oil drizzled at the very end is not optional: use the best olive oil you own for this single moment. It defines the entire dish.</p></div>
+    <div class="dyk"><strong>🏛️ Did You Know?</strong><p>Blitva s krumpirom (Swiss chard with potatoes and olive oil) is the universal Dalmatian side dish, appearing alongside virtually every fish meal from Istria to Dubrovnik. This combination of oily fish, verdant chard and starchy potato was the daily meal of Dalmatian fishermen for centuries and is now celebrated as a masterpiece of Mediterranean simplicity.</p></div>
+  </div>
+</article>
+
+<!-- ═══ ZAGREB & ZAGORJE ═══ -->
+<div class="chapter ch-zagreb" id="zagreb">
+  <div class="chapter-header">
+    <div class="chapter-icon">🥐</div>
+    <div><div class="chapter-name">Zagreb &amp; Zagorje</div>
+    <div class="chapter-sub">Štrukli · Sarma · Zagorska Juha od Gljiva</div></div>
+  </div>
+</div>
+
+<!-- R14 ŠTRUKLI -->
+<article class="recipe fade-in">
+  <div class="recipe-top">
+    <div class="food-card" style="padding:0;overflow:hidden;background:#111">
+      <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?w=600&q=80" alt="Zagreb cheese pastry" style="width:100%;height:100%;object-fit:cover;display:block;min-height:200px">
+    </div>
+    <div class="recipe-header">
+      <div class="recipe-num">08</div>
+      <div class="recipe-name">Štrukli</div>
+      <div class="recipe-phonetic">SHTROO-klee</div>
+      <div class="recipe-tagline">Zagreb's beloved cheese-filled pastry — boiled or baked in cream</div>
+      <div class="recipe-pills"><span class="rpill">⏱ 75 min</span><span class="rpill">👥 6</span><span class="rpill">★★★☆☆</span><span class="rpill">🏛️ UNESCO Listed</span></div>
+    </div>
+  </div>
+  <div class="recipe-body">
+    <div class="recipe-grid">
+      <div><h3>🧅 Ingredients</h3><ul class="ing-list">
+        <li><span>Plain flour</span><span class="amt">400 g</span></li>
+        <li><span>Egg, oil, salt, warm water</span><span class="amt">1 / 1 tbsp / ½ tsp / ~180 ml</span></li>
+        <li><span>Fresh cow's cheese (svježi sir)</span><span class="amt">500 g</span></li>
+        <li><span>Sour cream (for filling)</span><span class="amt">150 g</span></li>
+        <li><span>Eggs (for filling)</span><span class="amt">3 large</span></li>
+        <li><span>Salt, melted butter</span><span class="amt">1 tsp / 50 g</span></li>
+        <li><span>Sour cream (for baking)</span><span class="amt">400 ml</span></li>
+        <li><span>Eggs (for baking)</span><span class="amt">2 large</span></li>
+        <li><span>Butter (for greasing)</span><span class="amt">30 g</span></li>
+      </ul></div>
+      <div><h3>👨‍🍳 Instructions</h3><ol class="steps">
+        <li>Make dough: mix flour, egg, oil and salt. Add warm water gradually, mixing until a smooth, slightly elastic dough forms. Knead for 10 minutes. Cover with a cloth and rest 30 minutes — the dough must relax fully before rolling.</li>
+        <li>Make filling: beat together fresh cheese, sour cream (150g), eggs and salt until completely smooth. Set aside.</li>
+        <li>On a well-floured cloth, roll the dough out very thin — almost transparent, like strudel pastry. Brush the entire surface generously with melted butter. Spread the cheese filling evenly over two-thirds of the dough.</li>
+        <li>Using the cloth to assist, roll the dough from the filling side into a tight, even log, like a strudel. Cut into portions approximately 8cm long with a sharp knife.</li>
+        <li>Cook in batches in abundantly salted boiling water for 10 minutes until they float and are cooked through. Remove with a slotted spoon and drain well.</li>
+        <li>For baked štrukli (pečeni): arrange boiled štrukli in a well-buttered baking dish. Beat 400ml sour cream together with 2 eggs and pour over the top. Bake at 200°C for 20–25 minutes until the top is deep golden and bubbling. Serve immediately — hot from the oven.</li>
+      </ol></div>
+    </div>
+    <div class="nutr"><h3>📊 Nutrition per Serving (2 baked)</h3><div class="nutr-grid">
+      <div class="ni"><span class="nv">480</span><span class="nl">Calories</span></div>
+      <div class="ni"><span class="nv">18g</span><span class="nl">Protein</span></div>
+      <div class="ni"><span class="nv">44g</span><span class="nl">Carbs</span></div>
+      <div class="ni"><span class="nv">26g</span><span class="nl">Fat</span></div>
+      <div class="ni"><span class="nv">1g</span><span class="nl">Fibre</span></div>
+      <div class="ni"><span class="nv">420mg</span><span class="nl">Sodium</span></div>
+    </div></div>
+    <div class="tip"><strong>💡 Chef's Tip</strong><p>Use svježi sir (Croatian fresh cottage cheese) — if unavailable, blend ricotta with a small amount of cream cheese for a close substitute. The dough must be rested and rolled paper-thin. Štrukli can also be served sweet — add 2 tbsp sugar and a sachet of vanilla sugar to the filling, and dust with icing sugar when serving.</p></div>
+    <div class="dyk"><strong>🏛️ Did You Know?</strong><p>Štrukli from the Zagorje region is on Croatia's UNESCO Intangible Cultural Heritage list. The dish is so beloved in Zagreb that it appears on virtually every restaurant menu in the city. Passionate disagreement exists between kuhani (boiled) and pečeni (baked) camps — both sides are convinced they hold the true tradition, and both are right.</p></div>
+  </div>
+</article>
+
+<!-- R16 SARMA -->
+<article class="recipe fade-in">
+  <div class="recipe-top">
+    <div class="food-card" style="padding:0;overflow:hidden;background:#111">
+      <img src="https://images.unsplash.com/photo-1608835291093-394b0c943a75?w=600&q=80" alt="Stuffed cabbage sarma" style="width:100%;height:100%;object-fit:cover;display:block;min-height:200px">
+    </div>
+    <div class="recipe-header">
+      <div class="recipe-num">09</div>
+      <div class="recipe-name">Sarma</div>
+      <div class="recipe-phonetic">SAR-mah</div>
+      <div class="recipe-tagline">Stuffed sauerkraut rolls with minced meat and rice — Croatia's indispensable winter comfort</div>
+      <div class="recipe-pills"><span class="rpill">⏱ 45 min + 2.5hr cook</span><span class="rpill">👥 6–8</span><span class="rpill">★★★☆☆</span><span class="rpill">❄️ Winter Classic</span></div>
+    </div>
+  </div>
+  <div class="recipe-body">
+    <div class="recipe-grid">
+      <div><h3>🧅 Ingredients</h3><ul class="ing-list">
+        <li><span>Whole sauerkraut head (kiseli kupus)</span><span class="amt">1 large head</span></li>
+        <li><span>Mixed minced pork and beef</span><span class="amt">800 g</span></li>
+        <li><span>Short-grain rice, uncooked</span><span class="amt">100 g</span></li>
+        <li><span>Onion finely grated, garlic crushed</span><span class="amt">1 large / 3 cloves</span></li>
+        <li><span>Sweet paprika</span><span class="amt">2 tbsp</span></li>
+        <li><span>Smoked bacon or pork belly (for base)</span><span class="amt">200 g</span></li>
+        <li><span>Egg, salt, black pepper</span><span class="amt">1 egg / to taste</span></li>
+        <li><span>Sour cream (to serve)</span><span class="amt">200 ml</span></li>
+      </ul></div>
+      <div><h3>👨‍🍳 Instructions</h3><ol class="steps">
+        <li>Carefully separate large outer leaves from the sauerkraut head, keeping them whole and unbroken. Rinse briefly under cold water if they are very sour — though some sourness is essential to the dish.</li>
+        <li>Mix minced meat with uncooked rice, grated onion, crushed garlic, egg, paprika, salt and pepper until thoroughly combined. The mixture should be cohesive but not overly compressed.</li>
+        <li>Place 2 heaped tablespoons of filling near one edge of a sauerkraut leaf. Fold in the sides and roll up firmly into a tight cigar shape. Repeat until all filling is used.</li>
+        <li>Line the bottom of a heavy pot with sliced smoked bacon. Arrange sarma tightly in the pot in layers, packing any remaining shredded sauerkraut between and around the rolls. Cover completely with water. Place a heavy plate on top to hold the sarma in place during cooking.</li>
+        <li>Bring to a boil, reduce to the lowest possible simmer, cover and cook for a minimum of 2.5 hours. Serve with a generous spoonful of cold sour cream on each portion.</li>
+      </ol></div>
+    </div>
+    <div class="nutr"><h3>📊 Nutrition per Serving (2 rolls)</h3><div class="nutr-grid">
+      <div class="ni"><span class="nv">380</span><span class="nl">Calories</span></div>
+      <div class="ni"><span class="nv">28g</span><span class="nl">Protein</span></div>
+      <div class="ni"><span class="nv">18g</span><span class="nl">Carbs</span></div>
+      <div class="ni"><span class="nv">22g</span><span class="nl">Fat</span></div>
+      <div class="ni"><span class="nv">3g</span><span class="nl">Fibre</span></div>
+      <div class="ni"><span class="nv">680mg</span><span class="nl">Sodium</span></div>
+    </div></div>
+    <div class="tip"><strong>💡 Chef's Tip</strong><p>Sarma universally and unambiguously tastes better on day 2 and day 3 — always make more than you need. The smoked pork layer at the bottom infuses the entire pot with incredible depth. Use a whole sauerkraut head with leaves intact — never shredded sauerkraut for rolling. The uncooked rice absorbs the meat juices inside the sarma as it cooks — never pre-cook it.</p></div>
+    <div class="tradition"><strong>🎊 Tradition — New Year and Christmas</strong><p>Sarma is non-negotiable at both Christmas and New Year in Croatia — no holiday table is complete without a steaming pot of it. The word comes from the Turkish "sarmak" meaning "to wrap," a linguistic legacy of Ottoman influence on the Balkans. Croatian families often make enormous batches — 100 or more sarma at once — sharing them with neighbours, relatives and friends. The tradition of shared cooking is itself as important as the dish: making sarma together, often across two or three generations, is one of Croatia's most enduring domestic rituals.</p></div>
+  </div>
+</article>
+
+<!-- R17 ZAGORSKA JUHA -->
+<article class="recipe fade-in">
+  <div class="recipe-top">
+    <div class="food-card" style="padding:0;overflow:hidden;background:#111">
+      <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80" alt="Zagorje mushroom soup" style="width:100%;height:100%;object-fit:cover;display:block;min-height:200px">
+    </div>
+    <div class="recipe-header">
+      <div class="recipe-num">10</div>
+      <div class="recipe-name">Zagorska Juha od Gljiva</div>
+      <div class="recipe-phonetic">zah-GOR-skah YOO-hah od GLYEE-vah</div>
+      <div class="recipe-tagline">Zagorje's rich mushroom soup — a velvet autumn bowl from Croatia's rolling green hills</div>
+      <div class="recipe-pills"><span class="rpill">⏱ 45 min</span><span class="rpill">👥 4</span><span class="rpill">★★☆☆☆</span><span class="rpill">🍷 Graševina or Riesling</span></div>
+    </div>
+  </div>
+  <div class="recipe-body">
+    <div class="recipe-grid">
+      <div><h3>🧅 Ingredients</h3><ul class="ing-list">
+        <li><span>Mixed mushrooms (forest, cremini, porcini)</span><span class="amt">600 g</span></li>
+        <li><span>Dried porcini mushrooms, soaked in 200ml hot water</span><span class="amt">20 g</span></li>
+        <li><span>Onion, finely diced</span><span class="amt">1 large</span></li>
+        <li><span>Garlic, minced</span><span class="amt">3 cloves</span></li>
+        <li><span>Butter</span><span class="amt">60 g</span></li>
+        <li><span>Chicken or vegetable stock</span><span class="amt">800 ml</span></li>
+        <li><span>Sour cream (kiselo vrhnje)</span><span class="amt">200 ml</span></li>
+        <li><span>Fresh thyme, bay leaf</span><span class="amt">4 sprigs / 2</span></li>
+        <li><span>White wine</span><span class="amt">100 ml</span></li>
+        <li><span>Fresh parsley</span><span class="amt">handful</span></li>
+        <li><span>Salt and white pepper</span><span class="amt">to taste</span></li>
+      </ul></div>
+      <div><h3>👨‍🍳 Instructions</h3><ol class="steps">
+        <li>Soak dried porcini in 200ml hot water for 20 minutes. Drain and reserve the soaking liquid (strain through a fine cloth to remove any grit). Roughly chop the rehydrated mushrooms.</li>
+        <li>Melt butter in a large heavy pot over medium-high heat until foaming. Add fresh mushrooms in a single layer — do not stir for 3 minutes to allow them to develop a golden sear. Toss and cook 3 more minutes until deeply coloured. Season well.</li>
+        <li>Add onion and garlic, cook 5 minutes until softened. Add rehydrated porcini and cook 2 minutes. Add white wine and let it bubble vigorously for 2 minutes.</li>
+        <li>Add stock, reserved porcini soaking liquid, thyme and bay leaves. Bring to a simmer and cook 15 minutes.</li>
+        <li>Remove bay leaves and thyme stems. Use an immersion blender to blend about half the soup — leaving the rest chunky for texture. Stir in sour cream and warm gently. Do not boil after adding the cream or it may split.</li>
+        <li>Adjust seasoning. Serve in deep bowls with fresh parsley and a swirl of additional sour cream. Serve with crusty bread or toasted sourdough.</li>
+      </ol></div>
+    </div>
+    <div class="nutr"><h3>📊 Nutrition per Serving</h3><div class="nutr-grid">
+      <div class="ni"><span class="nv">290</span><span class="nl">Calories</span></div>
+      <div class="ni"><span class="nv">8g</span><span class="nl">Protein</span></div>
+      <div class="ni"><span class="nv">14g</span><span class="nl">Carbs</span></div>
+      <div class="ni"><span class="nv">22g</span><span class="nl">Fat</span></div>
+      <div class="ni"><span class="nv">3g</span><span class="nl">Fibre</span></div>
+      <div class="ni"><span class="nv">360mg</span><span class="nl">Sodium</span></div>
+    </div></div>
+    <div class="tip"><strong>💡 Chef's Tip</strong><p>The reserved porcini soaking liquid is liquid gold — it concentrates all the deep, earthy mushroom flavour. Never discard it. The key to excellent mushroom soup is the initial high-heat sear without stirring — this develops a deep golden crust on the mushrooms that gives the soup its complex, savoury depth. Partial blending creates the ideal creamy-yet-textured consistency.</p></div>
+    <div class="dyk"><strong>🏛️ Did You Know?</strong><p>The Zagorje hills north of Zagreb are famous throughout Croatia for their wild mushroom gathering (branje gljiva) — an autumn tradition that fills weekends from September through November. Families have their secret forest spots, passed down through generations, where porcini, chanterelles and king oyster mushrooms grow in abundance after autumn rains. The mushroom market in Zagreb's Dolac covered market is legendary during peak season.</p></div>
+  </div>
+</article>
+
+<!-- ═══ LIKA ═══ -->
+<div class="chapter ch-lika" id="lika">
+  <div class="chapter-header">
+    <div class="chapter-icon">🏔️</div>
+    <div><div class="chapter-name">Lika</div>
+    <div class="chapter-sub">Mountain Lamb · Sour Cream · Smoked Meats · Dried Beans</div></div>
+  </div>
+</div>
+
+<!-- R19 LIČKI KRUMPIR -->
+<article class="recipe fade-in">
+  <div class="recipe-top">
+    <div class="food-card" style="padding:0;overflow:hidden;background:#111">
+      <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=600&q=80" alt="Lika potato with cream" style="width:100%;height:100%;object-fit:cover;display:block;min-height:200px">
+    </div>
+    <div class="recipe-header">
+      <div class="recipe-num">11</div>
+      <div class="recipe-name">Lički Krumpir s Vrhnjem</div>
+      <div class="recipe-phonetic">LEECH-kee KROOM-peer s VUR-nyem</div>
+      <div class="recipe-tagline">Lika potato baked with sour cream and smoked meat — mountain comfort at its finest</div>
+      <div class="recipe-pills"><span class="rpill">⏱ 65 min</span><span class="rpill">👥 4</span><span class="rpill">★★☆☆☆</span><span class="rpill">🥔 Mountain Classic</span></div>
+    </div>
+  </div>
+  <div class="recipe-body">
+    <div class="recipe-grid">
+      <div><h3>🧅 Ingredients</h3><ul class="ing-list">
+        <li><span>Potatoes, peeled and sliced 5mm</span><span class="amt">1 kg</span></li>
+        <li><span>Smoked pork ribs or bacon</span><span class="amt">300 g</span></li>
+        <li><span>Sour cream</span><span class="amt">300 ml</span></li>
+        <li><span>Onion, finely sliced</span><span class="amt">2 medium</span></li>
+        <li><span>Garlic cloves, crushed</span><span class="amt">4 cloves</span></li>
+        <li><span>Fresh thyme</span><span class="amt">4 sprigs</span></li>
+        <li><span>Coarse salt, black pepper</span><span class="amt">generous</span></li>
+        <li><span>Sunflower oil</span><span class="amt">2 tbsp</span></li>
+      </ul></div>
+      <div><h3>👨‍🍳 Instructions</h3><ol class="steps">
+        <li>Pre-boil sliced potatoes in well-salted water for 8 minutes until only partially cooked — they should still hold their shape and resist a fork. Drain very well and pat dry.</li>
+        <li>In a heavy ovenproof pot, heat oil over high heat. Brown smoked pork ribs on all sides until golden — 8 minutes. Remove and set aside. In the same fat, sauté onion and garlic over medium heat until soft and golden — 10 minutes.</li>
+        <li>Layer the potatoes and smoked meat alternately back into the pot with the onions, distributing thyme sprigs throughout. Season each layer generously with salt and pepper.</li>
+        <li>Pour sour cream evenly over the entire surface. Cover the pot tightly with a lid and bake at 180°C for 35–40 minutes until the potatoes are completely tender and the cream is bubbling around the edges.</li>
+        <li>Uncover and bake a further 10 minutes to develop a golden top. Serve directly from the pot at the table.</li>
+      </ol></div>
+    </div>
+    <div class="nutr"><h3>📊 Nutrition per Serving</h3><div class="nutr-grid">
+      <div class="ni"><span class="nv">440</span><span class="nl">Calories</span></div>
+      <div class="ni"><span class="nv">22g</span><span class="nl">Protein</span></div>
+      <div class="ni"><span class="nv">42g</span><span class="nl">Carbs</span></div>
+      <div class="ni"><span class="nv">20g</span><span class="nl">Fat</span></div>
+      <div class="ni"><span class="nv">4g</span><span class="nl">Fibre</span></div>
+      <div class="ni"><span class="nv">560mg</span><span class="nl">Sodium</span></div>
+    </div></div>
+    <div class="tip"><strong>💡 Chef's Tip</strong><p>Lika potatoes grown at high altitude develop denser, drier flesh and more concentrated flavour than lowland varieties. The pre-boiling step is essential — it ensures the potatoes cook all the way through without the cream breaking or burning. The smoky meat is non-negotiable; it infuses the entire dish with extraordinary depth.</p></div>
+    <div class="dyk"><strong>🏛️ Did You Know?</strong><p>Lika is one of Croatia's most sparsely populated regions — vast, dramatic karst landscape between the Dinaric Alps and the Velebit mountains. Its isolation has preserved centuries-old cooking traditions entirely unchanged. The cold mountain air, spring water and herb-rich pastures create ingredients of exceptional quality that are little-known outside Croatia, making every visit to a Lika farmhouse table a genuine culinary discovery.</p></div>
+  </div>
+</article>
+
+<!-- R20 GRAH S KOBASICOM -->
+<article class="recipe fade-in">
+  <div class="recipe-top">
+    <div class="food-card" style="padding:0;overflow:hidden;background:#111">
+      <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80" alt="Bean stew with sausage" style="width:100%;height:100%;object-fit:cover;display:block;min-height:200px">
+    </div>
+    <div class="recipe-header">
+      <div class="recipe-num">12</div>
+      <div class="recipe-name">Grah s Kobasicom</div>
+      <div class="recipe-phonetic">GRAHH s koh-BAH-see-tsom</div>
+      <div class="recipe-tagline">Slow-cooked bean stew with smoked sausage — Croatian peasant cooking at its absolute peak</div>
+      <div class="recipe-pills"><span class="rpill">⏱ overnight soak + 2hr cook</span><span class="rpill">👥 6</span><span class="rpill">★★☆☆☆</span><span class="rpill">❄️ Winter Warmth</span></div>
+    </div>
+  </div>
+  <div class="recipe-body">
+    <div class="recipe-grid">
+      <div><h3>🧅 Ingredients</h3><ul class="ing-list">
+        <li><span>Dried beans (borlotti or cranberry), soaked overnight</span><span class="amt">400 g</span></li>
+        <li><span>Smoked sausage (kobasica)</span><span class="amt">400 g</span></li>
+        <li><span>Smoked pork ribs</span><span class="amt">300 g</span></li>
+        <li><span>Onion, garlic</span><span class="amt">2 large / 5 cloves</span></li>
+        <li><span>Carrots, celery</span><span class="amt">2 each</span></li>
+        <li><span>Sweet paprika, bay leaves</span><span class="amt">1 tbsp / 3</span></li>
+        <li><span>Sunflower oil</span><span class="amt">3 tbsp</span></li>
+        <li><span>Salt and pepper</span><span class="amt">to taste</span></li>
+      </ul></div>
+      <div><h3>👨‍🍳 Instructions</h3><ol class="steps">
+        <li>Drain soaked beans thoroughly. Place in a large pot with smoked pork ribs and cover generously with cold water. Bring to a boil, skim foam carefully, reduce heat and simmer steadily for 45 minutes.</li>
+        <li>In a separate pan, heat oil over medium heat. Sauté onion, carrots and celery for 12 minutes until soft and lightly golden. Add garlic and paprika, cook 2 more minutes stirring constantly.</li>
+        <li>Transfer the soffritto into the bean pot. Add bay leaves and season generously — but wait until the beans are nearly tender before adjusting salt, as salt hardens bean skins.</li>
+        <li>Add sliced sausage to the pot. Continue to simmer for 45–60 more minutes until beans are completely soft and the stew is thick, fragrant and deeply coloured.</li>
+        <li>Remove pork ribs, shred all meat from the bones and return to the pot. Discard bones. Adjust seasoning. Serve in deep bowls with rye bread or cornbread.</li>
+      </ol></div>
+    </div>
+    <div class="nutr"><h3>📊 Nutrition per Serving</h3><div class="nutr-grid">
+      <div class="ni"><span class="nv">480</span><span class="nl">Calories</span></div>
+      <div class="ni"><span class="nv">34g</span><span class="nl">Protein</span></div>
+      <div class="ni"><span class="nv">44g</span><span class="nl">Carbs</span></div>
+      <div class="ni"><span class="nv">18g</span><span class="nl">Fat</span></div>
+      <div class="ni"><span class="nv">14g</span><span class="nl">Fibre</span></div>
+      <div class="ni"><span class="nv">780mg</span><span class="nl">Sodium</span></div>
+    </div></div>
+    <div class="tip"><strong>💡 Chef's Tip</strong><p>This dish tastes significantly better on day 2 — always make more than you need. Use two types of smoked meat for maximum depth of flavour. Never add salt until the beans are completely tender — added early, salt hardens the skin and extends cooking time significantly.</p></div>
+    <div class="dyk"><strong>🏛️ Did You Know?</strong><p>Grah (bean stew) is one of the most beloved dishes across all of Croatia, eaten from Istria to Slavonia. In Croatian villages, a big pot of grah was the weekly anchor — kept warm by the fire and replenished daily. It represents a form of culinary democracy: the same dish made for the poorest peasant and the wealthiest farmer, differentiated only by the quality of the sausage.</p></div>
+  </div>
+</article>
+
+<!-- ═══ SLAVONIJA ═══ -->
+<div class="chapter ch-slavonia" id="slavonia">
+  <div class="chapter-header">
+    <div class="chapter-icon">🌶️</div>
+    <div><div class="chapter-name">Slavonija</div>
+    <div class="chapter-sub">Fiš Paprikaš · Stuffed Peppers · Čobanac · River Fish</div></div>
+  </div>
+</div>
+
+<!-- R21 FIŠ PAPRIKAŠ -->
+<article class="recipe fade-in">
+  <div class="recipe-top">
+    <div class="food-card" style="padding:0;overflow:hidden;background:#111">
+      <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=600&q=80" alt="Slavonian fish paprikash" style="width:100%;height:100%;object-fit:cover;display:block;min-height:200px">
+    </div>
+    <div class="recipe-header">
+      <div class="recipe-num">13</div>
+      <div class="recipe-name">Fiš Paprikaš</div>
+      <div class="recipe-phonetic">FEESH pah-pree-KAHSH</div>
+      <div class="recipe-tagline">Slavonia's blazing river fish stew — paprika, carp and open fire in a copper cauldron</div>
+      <div class="recipe-pills"><span class="rpill">⏱ 70 min</span><span class="rpill">👥 6</span><span class="rpill">★★★☆☆</span><span class="rpill">🍷 Graševina</span></div>
+    </div>
+  </div>
+  <div class="recipe-body">
+    <div class="recipe-grid">
+      <div><h3>🧅 Ingredients</h3><ul class="ing-list">
+        <li><span>Carp (krap), cut into thick steaks</span><span class="amt">1.5 kg</span></li>
+        <li><span>Catfish or pike</span><span class="amt">500 g</span></li>
+        <li><span>Onions, very finely diced</span><span class="amt">4 large</span></li>
+        <li><span>Sweet red paprika</span><span class="amt">4 tbsp</span></li>
+        <li><span>Hot paprika</span><span class="amt">1–2 tsp</span></li>
+        <li><span>Ripe tomatoes, green pepper, garlic</span><span class="amt">300g / 1 / 4 cloves</span></li>
+        <li><span>Sunflower oil</span><span class="amt">60 ml</span></li>
+        <li><span>White wine, fish stock, bay leaves</span><span class="amt">200ml / 600ml / 3</span></li>
+        <li><span>Salt</span><span class="amt">to taste</span></li>
+      </ul><p style="font-size:.82rem;color:var(--stone);margin-top:8px;font-style:italic">Serve with homemade egg noodles (domaći rezanci)</p></div>
+      <div><h3>👨‍🍳 Instructions</h3><ol class="steps">
+        <li>Salt the fish pieces on all sides and set aside for 15 minutes. In Slavonia, this dish is traditionally cooked in a large copper cauldron (kotlić) suspended over an open wood fire — a method that gives it an incomparable smoky character.</li>
+        <li>Heat oil in a large heavy pot. Sauté onions over medium heat for a full 20 minutes until very deeply golden — this caramelised onion base is the soul of the dish and cannot be rushed.</li>
+        <li>CRITICAL STEP: Remove the pot briefly from the heat. Add both paprikas and stir rapidly for exactly 30 seconds. Return to medium heat immediately. Paprika that burns becomes bitter and ruins the entire stew.</li>
+        <li>Add tomatoes, green pepper and garlic. Cook for 10 minutes until softened. Add wine and let it bubble for 3 minutes. Add stock and bay leaves.</li>
+        <li>Add all fish carefully. Do not stir — only shake the pot. Simmer very gently for 20–25 minutes. Serve in deep bowls over egg noodles. Place extra hot paprika on the table.</li>
+      </ol></div>
+    </div>
+    <div class="nutr"><h3>📊 Nutrition per Serving (without noodles)</h3><div class="nutr-grid">
+      <div class="ni"><span class="nv">310</span><span class="nl">Calories</span></div>
+      <div class="ni"><span class="nv">38g</span><span class="nl">Protein</span></div>
+      <div class="ni"><span class="nv">8g</span><span class="nl">Carbs</span></div>
+      <div class="ni"><span class="nv">12g</span><span class="nl">Fat</span></div>
+      <div class="ni"><span class="nv">2g</span><span class="nl">Fibre</span></div>
+      <div class="ni"><span class="nv">460mg</span><span class="nl">Sodium</span></div>
+    </div></div>
+    <div class="tip"><strong>💡 Chef's Tip</strong><p>The critical technique: always add paprika OFF the heat and stir immediately. Paprika in hot oil burns in seconds and turns irreversibly bitter. Traditionalists are absolutely correct that this dish is best cooked over an open fire in a copper cauldron. The more varieties of river fish, the richer and more complex the stew.</p></div>
+    <div class="tradition"><strong>🎊 Tradition — The Fiš Festival</strong><p>The annual Fiš Festival (Fiš Fešta) held in Slavonia is one of Croatia's most spectacular food events — teams from across the region compete over two days to produce the finest fiš paprikaš, cooking in enormous copper cauldrons over open fires along the riverbank. Tens of thousands of visitors attend. The winning team earns not just a trophy but a year of undisputed honour among their neighbours. The festival represents the living tradition of Slavonian river fishing culture — a way of life tied to the great rivers that once sustained entire communities.</p></div>
+  </div>
+</article>
+
+<!-- R22 PUNJENE PAPRIKE -->
+<article class="recipe fade-in">
+  <div class="recipe-top">
+    <div class="food-card" style="padding:0;overflow:hidden;background:#111">
+      <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&q=80" alt="Stuffed peppers" style="width:100%;height:100%;object-fit:cover;display:block;min-height:200px">
+    </div>
+    <div class="recipe-header">
+      <div class="recipe-num">14</div>
+      <div class="recipe-name">Punjene Paprike</div>
+      <div class="recipe-phonetic">POO-nyeh-neh PAH-pree-keh</div>
+      <div class="recipe-tagline">Stuffed peppers in rich tomato sauce — Croatia's beloved summer and autumn classic</div>
+      <div class="recipe-pills"><span class="rpill">⏱ 25 min + 1.5hr cook</span><span class="rpill">👥 4–6</span><span class="rpill">★★☆☆☆</span><span class="rpill">🍅 Harvest Season</span></div>
+    </div>
+  </div>
+  <div class="recipe-body">
+    <div class="recipe-grid">
+      <div><h3>🧅 Ingredients</h3><ul class="ing-list">
+        <li><span>Large pointed peppers (kapija)</span><span class="amt">8 peppers</span></li>
+        <li><span>Mixed minced pork and beef</span><span class="amt">600 g</span></li>
+        <li><span>Short-grain rice, uncooked</span><span class="amt">80 g</span></li>
+        <li><span>Onion grated, garlic crushed</span><span class="amt">1 large / 2 cloves</span></li>
+        <li><span>Egg, sweet paprika</span><span class="amt">1 large / 2 tsp</span></li>
+        <li><span>Tomato passata</span><span class="amt">600 ml</span></li>
+        <li><span>Sour cream (to serve)</span><span class="amt">150 ml</span></li>
+        <li><span>Salt, pepper, bay leaves</span><span class="amt">to taste</span></li>
+      </ul></div>
+      <div><h3>👨‍🍳 Instructions</h3><ol class="steps">
+        <li>Cut off the tops of the peppers and carefully remove seeds and white membranes without breaking the pepper. Keep the tops aside — they will be used as lids.</li>
+        <li>Combine minced meat with uncooked rice, grated onion, garlic, egg, paprika, salt and pepper. Mix until thoroughly combined. The rice must be completely raw — it cooks inside the pepper absorbing the meat juices.</li>
+        <li>Fill each pepper firmly with the meat mixture, pressing it in well. Replace the tops as lids. Do not overfill — leave a small gap as the rice expands during cooking.</li>
+        <li>Stand the peppers upright, packed tightly together, in a pot just large enough to hold them. Pour passata around and over them. Add bay leaves and enough water to come halfway up the peppers.</li>
+        <li>Cover and cook over very low heat for 1.5 hours until the peppers are completely soft and yielding and the filling is cooked through. The sauce will reduce and thicken beautifully. Serve 2 peppers per person with generous ladles of tomato sauce and a spoonful of cold sour cream.</li>
+      </ol></div>
+    </div>
+    <div class="nutr"><h3>📊 Nutrition per Serving (2 peppers)</h3><div class="nutr-grid">
+      <div class="ni"><span class="nv">410</span><span class="nl">Calories</span></div>
+      <div class="ni"><span class="nv">30g</span><span class="nl">Protein</span></div>
+      <div class="ni"><span class="nv">28g</span><span class="nl">Carbs</span></div>
+      <div class="ni"><span class="nv">20g</span><span class="nl">Fat</span></div>
+      <div class="ni"><span class="nv">4g</span><span class="nl">Fibre</span></div>
+      <div class="ni"><span class="nv">440mg</span><span class="nl">Sodium</span></div>
+    </div></div>
+    <div class="tip"><strong>💡 Chef's Tip</strong><p>Use the long, pointed kapija pepper — it is thinner-skinned, sweeter and becomes completely meltingly soft when cooked, unlike a bell pepper which can remain tough. NEVER pre-cook the rice in the filling — it cooks inside the pepper absorbing all the wonderful meat juices. This dish improves magnificently the following day as the sauce absorbs into the filling overnight.</p></div>
+    <div class="dyk"><strong>🏛️ Did You Know?</strong><p>The kapija pepper is a Slavonian variety bred specifically for cooking — prized across the entire Balkans. In Slavonia, September marks the height of pepper season and households buy entire crates of kapija to roast, stuff, pickle, and dry for winter. The sight of bright red peppers strung to dry on farmhouse facades across Slavonia is one of the most iconic images of Croatian autumn.</p></div>
+  </div>
+</article>
+
+<!-- R23 ČOBANAC -->
+<article class="recipe fade-in">
+  <div class="recipe-top">
+    <div class="food-card" style="padding:0;overflow:hidden;background:#111">
+      <img src="https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=600&q=80" alt="Shepherd stew cobanac" style="width:100%;height:100%;object-fit:cover;display:block;min-height:200px">
+    </div>
+    <div class="recipe-header">
+      <div class="recipe-num">15</div>
+      <div class="recipe-name">Čobanac</div>
+      <div class="recipe-phonetic">CHOH-bah-nats</div>
+      <div class="recipe-tagline">The shepherd's fiery meat stew — three meats, paprika and open fire in Slavonian tradition</div>
+      <div class="recipe-pills"><span class="rpill">⏱ 30 min + 2hr cook</span><span class="rpill">👥 6</span><span class="rpill">★★★☆☆</span><span class="rpill">🍷 Graševina</span></div>
+    </div>
+  </div>
+  <div class="recipe-body">
+    <div class="recipe-grid">
+      <div><h3>🧅 Ingredients</h3><ul class="ing-list">
+        <li><span>Beef (chuck), diced 4cm</span><span class="amt">500 g</span></li>
+        <li><span>Pork shoulder, diced 4cm</span><span class="amt">400 g</span></li>
+        <li><span>Lamb shoulder, diced 4cm</span><span class="amt">300 g</span></li>
+        <li><span>Onions, finely diced</span><span class="amt">4 large</span></li>
+        <li><span>Sweet paprika</span><span class="amt">4 tbsp</span></li>
+        <li><span>Hot paprika</span><span class="amt">2 tsp (or more)</span></li>
+        <li><span>Garlic, crushed</span><span class="amt">5 cloves</span></li>
+        <li><span>Tomatoes, diced</span><span class="amt">300 g</span></li>
+        <li><span>Green pepper, diced</span><span class="amt">2 large</span></li>
+        <li><span>Dry white wine</span><span class="amt">200 ml</span></li>
+        <li><span>Sunflower oil</span><span class="amt">60 ml</span></li>
+        <li><span>Bay leaves, salt</span><span class="amt">3 / to taste</span></li>
+      </ul></div>
+      <div><h3>👨‍🍳 Instructions</h3><ol class="steps">
+        <li>Traditionally cooked in a copper cauldron (kotlić) over an open wood fire — like fiš paprikaš, čobanac gains enormous depth of flavour from wood smoke and the direct heat of an open fire.</li>
+        <li>Heat oil in a large heavy pot. Sauté onions over medium-high heat for 20 minutes until very deeply caramelised — this is non-negotiable. The dark, sweet onion base carries the entire dish.</li>
+        <li>Remove from heat momentarily. Add all the paprika and stir rapidly for 30 seconds. Return to heat.</li>
+        <li>Add all three meats at once and cook over high heat for 10 minutes, stirring frequently, until the meat has released its juices and they have evaporated, leaving the meat seared and fragrant.</li>
+        <li>Add garlic, tomatoes, green peppers, wine and bay leaves. Add water to just cover the meat. Bring to a boil, then reduce to a very low simmer. Cover and cook for 1.5–2 hours until all three meats are completely tender.</li>
+        <li>Adjust paprika and salt — čobanac should be bold, deeply spiced and hot. Serve in deep bowls with homemade bread for mopping up the sauce.</li>
+      </ol></div>
+    </div>
+    <div class="nutr"><h3>📊 Nutrition per Serving</h3><div class="nutr-grid">
+      <div class="ni"><span class="nv">490</span><span class="nl">Calories</span></div>
+      <div class="ni"><span class="nv">46g</span><span class="nl">Protein</span></div>
+      <div class="ni"><span class="nv">10g</span><span class="nl">Carbs</span></div>
+      <div class="ni"><span class="nv">28g</span><span class="nl">Fat</span></div>
+      <div class="ni"><span class="nv">2g</span><span class="nl">Fibre</span></div>
+      <div class="ni"><span class="nv">480mg</span><span class="nl">Sodium</span></div>
+    </div></div>
+    <div class="tip"><strong>💡 Chef's Tip</strong><p>The name "čobanac" comes from "čoban" meaning shepherd — this was traditionally the meal Slavonian shepherds made in the hills using whatever meat they had, cooked over a fire in a single pot. Using three different meats (beef, pork and lamb) is traditional and creates a more complex, layered flavour than any single meat alone. This is a dish that should be aggressively seasoned.</p></div>
+    <div class="dyk"><strong>🏛️ Did You Know?</strong><p>Čobanac is one of Slavonia's most convivial dishes — it is almost always cooked outdoors in a cauldron for large groups at celebrations, competitions and village gatherings. There are annual čobanac cook-offs in Slavonian towns where teams of amateur cooks compete for supremacy. The judging criteria are simple: depth of colour, intensity of flavour and heat level — a čobanac that doesn't make you reach for your drink is considered timid.</p></div>
+  </div>
+</article>
+
+<!-- ═══ DUBROVNIK ═══ -->
+<div class="chapter ch-dubrovnik" id="dubrovnik">
+  <div class="chapter-header">
+    <div class="chapter-icon">🏰</div>
+    <div><div class="chapter-name">Dubrovnik Region</div>
+    <div class="chapter-sub">Zelena Menestra · Bakalar na Bijelo</div></div>
+  </div>
+</div>
+
+<!-- R25 ZELENA MENESTRA -->
+<article class="recipe fade-in">
+  <div class="recipe-top">
+    <div class="food-card" style="padding:0;overflow:hidden;background:#111">
+      <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80" alt="Dubrovnik green soup" style="width:100%;height:100%;object-fit:cover;display:block;min-height:200px">
+    </div>
+    <div class="recipe-header">
+      <div class="recipe-num">16</div>
+      <div class="recipe-name">Zelena Menestra</div>
+      <div class="recipe-phonetic">ZEH-leh-nah meh-NEH-strah</div>
+      <div class="recipe-tagline">Dubrovnik's ancient green soup — smoked pork with kale and root vegetables, a city's soul in a bowl</div>
+      <div class="recipe-pills"><span class="rpill">⏱ 20 min + 2hr cook</span><span class="rpill">👥 6</span><span class="rpill">★★☆☆☆</span><span class="rpill">🍷 Plavac Mali or Dingač</span></div>
+    </div>
+  </div>
+  <div class="recipe-body">
+    <div class="recipe-grid">
+      <div><h3>🧅 Ingredients</h3><ul class="ing-list">
+        <li><span>Smoked pork shank or ribs</span><span class="amt">800 g</span></li>
+        <li><span>Smoked pork sausages (kobasice)</span><span class="amt">300 g</span></li>
+        <li><span>Kale or collard greens, roughly chopped</span><span class="amt">600 g</span></li>
+        <li><span>Turnip or kohlrabi, diced</span><span class="amt">300 g</span></li>
+        <li><span>Potatoes, peeled and diced</span><span class="amt">400 g</span></li>
+        <li><span>Carrots, diced</span><span class="amt">3 medium</span></li>
+        <li><span>Onion, finely diced</span><span class="amt">1 large</span></li>
+        <li><span>Garlic, crushed</span><span class="amt">4 cloves</span></li>
+        <li><span>Olive oil</span><span class="amt">3 tbsp</span></li>
+        <li><span>Bay leaves, black pepper</span><span class="amt">3 / generous</span></li>
+        <li><span>Salt</span><span class="amt">to taste (pork is salty)</span></li>
+        <li><span>Water</span><span class="amt">2 litres</span></li>
+      </ul></div>
+      <div><h3>👨‍🍳 Instructions</h3><ol class="steps">
+        <li>Place the smoked pork shank in a large pot with cold water. Bring to a boil, drain this first water (it removes excess salt and impurities), then refill with 2 litres of fresh cold water. Add bay leaves and bring back to a boil.</li>
+        <li>Reduce heat to a steady simmer and cook the pork for 45 minutes, skimming any foam that rises to the surface. The pork should be partially cooked before adding the vegetables.</li>
+        <li>In a separate small pan, heat olive oil. Sauté onion and garlic over medium heat for 8 minutes until softened. Add to the pork pot.</li>
+        <li>Add diced turnip, carrots and potatoes to the pot. Continue to simmer for 20 minutes until the root vegetables are beginning to soften.</li>
+        <li>Add the chopped kale and sliced sausages. Continue to cook for 30–40 more minutes over low heat until the kale is completely tender and has surrendered its bitterness, the vegetables are soft, and the broth is rich and deeply flavoured from the smoked meat.</li>
+        <li>Remove the pork shank, shred all the meat from the bone and return it to the soup. Discard the bone. Taste and adjust seasoning — the smoked meat is already salty so add additional salt carefully. Serve in deep bowls with thick slices of rustic bread.</li>
+      </ol></div>
+    </div>
+    <div class="nutr"><h3>📊 Nutrition per Serving</h3><div class="nutr-grid">
+      <div class="ni"><span class="nv">420</span><span class="nl">Calories</span></div>
+      <div class="ni"><span class="nv">38g</span><span class="nl">Protein</span></div>
+      <div class="ni"><span class="nv">28g</span><span class="nl">Carbs</span></div>
+      <div class="ni"><span class="nv">18g</span><span class="nl">Fat</span></div>
+      <div class="ni"><span class="nv">6g</span><span class="nl">Fibre</span></div>
+      <div class="ni"><span class="nv">860mg</span><span class="nl">Sodium</span></div>
+    </div></div>
+    <div class="tip"><strong>💡 Chef's Tip</strong><p>The initial blanching and discarding of the first cooking water is important — it removes excess salt from the smoked meat and results in a cleaner, clearer broth. Add salt ONLY after tasting at the very end, as smoked pork products vary widely in saltiness. This soup is always better the following day after the flavours have had time to integrate. Do not skip the kale — it is the defining ingredient.</p></div>
+    <div class="tradition"><strong>🎊 Tradition — Dubrovnik's Working-Class Heritage</strong><p>Zelena menestra is the quintessential Dubrovnik family dish — the meal that generations of ordinary Dubrovnik families ate through cold winters while the wealthy Republic's merchant class dined on more elaborate fare. Unlike the refined šporki makaruli and rozata which reflect the city's aristocratic trading heritage, zelena menestra is the food of the common people — sailors, fishermen, craftsmen and their families. It is made in Dubrovnik homes on Sundays and cold weekdays alike, and is considered as much a part of Dubrovnik's identity as the city walls themselves. The dish varies by season — in summer, green beans replace the kale; in autumn, pumpkin may be added.</p></div>
+  </div>
+</article>
+
+<!-- R26 BAKALAR -->
+<article class="recipe fade-in">
+  <div class="recipe-top">
+    <div class="food-card" style="padding:0;overflow:hidden;background:#111">
+      <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=600&q=80" alt="Salt cod bakalar" style="width:100%;height:100%;object-fit:cover;display:block;min-height:200px">
+    </div>
+    <div class="recipe-header">
+      <div class="recipe-num">17</div>
+      <div class="recipe-name">Bakalar na Bijelo</div>
+      <div class="recipe-phonetic">bah-KAH-lar nah BEE-yeh-loh</div>
+      <div class="recipe-tagline">Creamed salt cod with potatoes and olive oil — the sacred Christmas Eve dish of the entire Croatian coast</div>
+      <div class="recipe-pills"><span class="rpill">⏱ 48hr soak + 1hr cook</span><span class="rpill">👥 6</span><span class="rpill">★★★☆☆</span><span class="rpill">🎄 Christmas Eve Ritual</span></div>
+    </div>
+  </div>
+  <div class="recipe-body">
+    <div class="recipe-grid">
+      <div><h3>🧅 Ingredients</h3><ul class="ing-list">
+        <li><span>Dried salt cod (bakalar), soaked 48hrs — change water twice daily</span><span class="amt">800 g</span></li>
+        <li><span>Potatoes, boiled and peeled</span><span class="amt">800 g</span></li>
+        <li><span>Garlic cloves</span><span class="amt">8 cloves</span></li>
+        <li><span>Extra virgin olive oil</span><span class="amt">150 ml</span></li>
+        <li><span>Warm milk</span><span class="amt">100 ml</span></li>
+        <li><span>Fresh parsley</span><span class="amt">large bunch</span></li>
+        <li><span>Black pepper, lemon juice</span><span class="amt">generous / 1 lemon</span></li>
+      </ul></div>
+      <div><h3>👨‍🍳 Instructions</h3><ol class="steps">
+        <li>After 48 hours of soaking (change water every 12 hours), drain the bakalar. Taste a small piece — it should be mildly salty, not aggressively so. If still very salty, soak 12 more hours.</li>
+        <li>Place the bakalar in a pot of cold water. Bring slowly to a boil then immediately reduce to a bare simmer. Poach for 20 minutes until the flesh is tender and flakes easily. Drain and allow to cool. Carefully remove all skin, bones and cartilage. Flake the white flesh into large pieces.</li>
+        <li>In a large bowl or mortar, pound the garlic to a completely smooth paste with a pinch of coarse salt.</li>
+        <li>Mash the boiled potatoes roughly — leave some texture, not a smooth purée. Add the garlic paste, then begin adding olive oil in a very slow, thin stream while beating vigorously with a wooden spoon — exactly as if making aioli. Alternate with splashes of warm milk. The mixture should be creamy and cohesive.</li>
+        <li>Fold in the flaked bakalar gently, fresh parsley, black pepper and lemon juice. Taste very carefully — the bakalar is already salted and may need no additional salt at all.</li>
+        <li>Serve warm, with a final generous drizzle of raw olive oil poured over the top. Accompany with crusty bread or polenta. Also excellent cold the next day.</li>
+      </ol></div>
+    </div>
+    <div class="nutr"><h3>📊 Nutrition per Serving</h3><div class="nutr-grid">
+      <div class="ni"><span class="nv">390</span><span class="nl">Calories</span></div>
+      <div class="ni"><span class="nv">36g</span><span class="nl">Protein</span></div>
+      <div class="ni"><span class="nv">28g</span><span class="nl">Carbs</span></div>
+      <div class="ni"><span class="nv">16g</span><span class="nl">Fat</span></div>
+      <div class="ni"><span class="nv">3g</span><span class="nl">Fibre</span></div>
+      <div class="ni"><span class="nv">820mg</span><span class="nl">Sodium</span></div>
+    </div></div>
+    <div class="note"><strong>📚 Why Dried Cod on the Coast?</strong><p>See the full explanation in the Techniques section of this cookbook. In brief: the Catholic Church's rule of meatless days — Christmas Eve, all Fridays, and 40 days of Lent — drove enormous demand for preserved fish that could be stored year-round. Norwegian dried salt cod, arriving via Venetian and Ragusan trade networks, became more accessible than fresh fish for inland populations and, paradoxically, deeply embedded in coastal tradition as a ritual food for the holiest days of the year.</p></div>
+    <div class="tradition"><strong>🎊 Tradition — Badnjak (Christmas Eve)</strong><p>On Badnjak (Croatian Christmas Eve, December 24th), meat is forbidden by Catholic tradition. Across the entire Croatian coast — from Istria to Dubrovnik — the answer is always bakalar. Families spend the afternoon soaking and preparing the cod, and the smell of it cooking fills coastal apartment buildings and stone village houses alike. In Dalmatia and Dubrovnik, Christmas Eve dinner is bakalar na bijelo with boiled potatoes; in some families it is bakalar na crveno (with tomato sauce). Arguments about which version is correct are conducted with great passion and never resolved.</p></div>
+  </div>
+</article>
+
+<!-- ═══ SWEETS ═══ -->
+<div class="chapter ch-sweets" id="sweets">
+  <div class="chapter-header">
+    <div class="chapter-icon">🍯</div>
+    <div><div class="chapter-name">Slastice — Croatian Sweets</div>
+    <div class="chapter-sub">Kremšnita · Fritule · Medenjaci</div></div>
+  </div>
+</div>
+
+<!-- R27 KREMŠNITA -->
+<article class="recipe fade-in">
+  <div class="recipe-top">
+    <div class="food-card" style="padding:0;overflow:hidden;background:#111">
+      <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600&q=80" alt="Kremšnita cream cake" style="width:100%;height:100%;object-fit:cover;display:block;min-height:200px">
+    </div>
+    <div class="recipe-header">
+      <div class="recipe-num">18</div>
+      <div class="recipe-name">Kremšnita Samoborska</div>
+      <div class="recipe-phonetic">KREHM-shnee-tah sah-MOH-bor-skah</div>
+      <div class="recipe-tagline">Samobor's legendary vanilla cream cake — puff pastry, custard and cream since 1929</div>
+      <div class="recipe-pills"><span class="rpill">⏱ 30 min + 4hr chill</span><span class="rpill">👥 12 pieces</span><span class="rpill">★★★☆☆</span><span class="rpill">☕ Café Classic</span></div>
+    </div>
+  </div>
+  <div class="recipe-body">
+    <div class="recipe-grid">
+      <div><h3>🧅 Ingredients</h3><ul class="ing-list">
+        <li><span>Ready-made puff pastry sheets</span><span class="amt">2 sheets (500g)</span></li>
+        <li><span>Whole milk</span><span class="amt">1 litre</span></li>
+        <li><span>Egg yolks</span><span class="amt">8 large</span></li>
+        <li><span>Caster sugar</span><span class="amt">180 g</span></li>
+        <li><span>Cornflour (cornstarch)</span><span class="amt">80 g</span></li>
+        <li><span>Vanilla bean (or 2 tsp extract)</span><span class="amt">1</span></li>
+        <li><span>Butter</span><span class="amt">50 g</span></li>
+        <li><span>Heavy whipping cream (36%+)</span><span class="amt">500 ml</span></li>
+        <li><span>Powdered sugar, vanilla sugar</span><span class="amt">40 g / 1 sachet</span></li>
+        <li><span>Icing sugar for dusting</span><span class="amt">generous</span></li>
+      </ul></div>
+      <div><h3>👨‍🍳 Instructions</h3><ol class="steps">
+        <li>Bake puff pastry sheets individually on a lined tray at 200°C for 15–18 minutes until deeply golden and fully puffed. While still hot, press flat gently using a second tray if unevenly puffed. Allow to cool completely. Cut each sheet to exactly fit a 30×20cm pan.</li>
+        <li>Warm milk with the split vanilla bean until just below boiling. In a large bowl, whisk egg yolks, caster sugar and cornflour until very pale and smooth — at least 3 minutes of vigorous whisking. Slowly pour the hot milk into the egg mixture in a thin stream while whisking constantly to prevent the eggs from scrambling.</li>
+        <li>Return the mixture to the pan over medium heat. Stir continuously and energetically with a wooden spoon, reaching every corner of the pan, until the custard thickens dramatically — this takes 8–10 minutes. Remove vanilla pod. Stir in butter until completely melted and glossy.</li>
+        <li>Pour the hot custard onto one pastry sheet placed in the pan. Smooth the top. Allow to cool to room temperature, then refrigerate for a minimum of 2 hours until the custard is set firm enough to hold its shape when cut.</li>
+        <li>Whip the cream with powdered sugar and vanilla sugar to stiff, stable peaks. Spread carefully over the set custard layer — it should be approximately the same depth as the custard layer below it.</li>
+        <li>Place the second pastry sheet on top, pressing very gently. Refrigerate for at least 2 more hours, ideally overnight. Dust very generously with icing sugar immediately before serving. Cut into generous squares with a sharp, wet knife — dip the knife in hot water between each cut.</li>
+      </ol></div>
+    </div>
+    <div class="nutr"><h3>📊 Nutrition per Piece (1/12)</h3><div class="nutr-grid">
+      <div class="ni"><span class="nv">420</span><span class="nl">Calories</span></div>
+      <div class="ni"><span class="nv">7g</span><span class="nl">Protein</span></div>
+      <div class="ni"><span class="nv">38g</span><span class="nl">Carbs</span></div>
+      <div class="ni"><span class="nv">26g</span><span class="nl">Fat</span></div>
+      <div class="ni"><span class="nv">0.5g</span><span class="nl">Fibre</span></div>
+      <div class="ni"><span class="nv">180mg</span><span class="nl">Sodium</span></div>
+    </div></div>
+    <div class="tip"><strong>💡 Chef's Tip</strong><p>The custard MUST be completely cold and firmly set before adding the cream layer — otherwise the cream sinks into the custard and the layers merge. Use minimum 36% fat cream — it must hold its shape under the weight of the top pastry. The ratio of custard to cream should be exactly equal — this is what distinguishes authentic Samobor kremšnita from all imitations.</p></div>
+    <div class="dyk"><strong>🏛️ Did You Know?</strong><p>The original Samobor kremšnita recipe has been served unchanged at Kavana Livadić since 1929. Visitors travel from across Croatia specifically to eat one in Samobor — a charming medieval town 25km from Zagreb famous for its carnival (one of the oldest in Croatia), its bermet vermouth, and this cake above all else. Samoborci are fiercely and amusingly possessive of their kremšnita's superiority over all other versions.</p></div>
+  </div>
+</article>
+
+<!-- R29 FRITULE -->
+<article class="recipe fade-in">
+  <div class="recipe-top">
+    <div class="food-card" style="padding:0;overflow:hidden;background:#111">
+      <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&q=80" alt="Fritule mini doughnuts" style="width:100%;height:100%;object-fit:cover;display:block;min-height:200px">
+    </div>
+    <div class="recipe-header">
+      <div class="recipe-num">19</div>
+      <div class="recipe-name">Fritule</div>
+      <div class="recipe-phonetic">FREE-too-leh</div>
+      <div class="recipe-tagline">Dalmatian mini doughnuts with raisins, citrus and rakija — Christmas in every bite</div>
+      <div class="recipe-pills"><span class="rpill">⏱ 20 min + 1hr rest</span><span class="rpill">👥 ~50 pieces</span><span class="rpill">★★☆☆☆</span><span class="rpill">🎄 Advent Classic</span></div>
+    </div>
+  </div>
+  <div class="recipe-body">
+    <div class="recipe-grid">
+      <div><h3>🧅 Ingredients</h3><ul class="ing-list">
+        <li><span>Plain flour</span><span class="amt">400 g</span></li>
+        <li><span>Fresh yeast (or 7g dried)</span><span class="amt">20 g</span></li>
+        <li><span>Warm whole milk</span><span class="amt">200 ml</span></li>
+        <li><span>Eggs</span><span class="amt">3 large</span></li>
+        <li><span>Sugar, vanilla sugar</span><span class="amt">60 g / 2 sachets</span></li>
+        <li><span>Lemon zest, orange zest</span><span class="amt">1 of each</span></li>
+        <li><span>Rakija (grappa or brandy)</span><span class="amt">3 tbsp</span></li>
+        <li><span>Raisins, soaked in rum overnight</span><span class="amt">100 g</span></li>
+        <li><span>Salt, oil for frying</span><span class="amt">pinch / 1 litre</span></li>
+        <li><span>Icing sugar for dusting</span><span class="amt">very generous</span></li>
+      </ul></div>
+      <div><h3>👨‍🍳 Instructions</h3><ol class="steps">
+        <li>Activate yeast in warm milk with 1 tsp of the sugar for 10 minutes until the surface is foamy. This confirms the yeast is alive.</li>
+        <li>In a large bowl, combine flour, sugar, vanilla sugar, salt, lemon zest and orange zest. Add eggs and rakija and mix. Add the yeast mixture and stir until a thick, sticky batter forms — not a dough. Fold in the rum-soaked raisins with their liquid. Cover with a cloth and rest in a warm place for 1 hour.</li>
+        <li>Heat sunflower oil in a deep, heavy pot to exactly 175°C. Test by dropping a tiny bit of batter — it should rise to the surface and sizzle gently, not smoke or burn.</li>
+        <li>Using two wet spoons, drop walnut-sized portions of batter into the hot oil. Do not crowd the pot — work in batches of 8–10. Fry for 3–4 minutes, turning occasionally, until deep golden brown on all sides.</li>
+        <li>Remove with a slotted spoon and drain briefly on kitchen paper. While still hot, dust very generously — almost aggressively — with icing sugar. Serve in a big, snow-white pile. They are best eaten within 1 hour of frying.</li>
+      </ol></div>
+    </div>
+    <div class="nutr"><h3>📊 Nutrition per 5 pieces</h3><div class="nutr-grid">
+      <div class="ni"><span class="nv">280</span><span class="nl">Calories</span></div>
+      <div class="ni"><span class="nv">5g</span><span class="nl">Protein</span></div>
+      <div class="ni"><span class="nv">38g</span><span class="nl">Carbs</span></div>
+      <div class="ni"><span class="nv">12g</span><span class="nl">Fat</span></div>
+      <div class="ni"><span class="nv">1g</span><span class="nl">Fibre</span></div>
+      <div class="ni"><span class="nv">60mg</span><span class="nl">Sodium</span></div>
+    </div></div>
+    <div class="tip"><strong>💡 Chef's Tip</strong><p>Oil temperature is the most critical variable: too cool and fritule absorb excess oil and are greasy; too hot and they burn outside while raw inside. A kitchen thermometer is strongly recommended. The batter should be thick and sticky — resist the temptation to add more flour. Soaking the raisins in rum overnight gives them plumpness and an extra layer of flavour.</p></div>
+    <div class="tradition"><strong>🎊 Tradition — Advent and Christmas Markets</strong><p>Fritule are the definitive Croatian Christmas sweet, made in every household along the Dalmatian coast from Advent (early December) through Epiphany (January 6th). They appear at Christmas markets across Croatia — most famously at Zagreb's Advent in Zagreb, voted Europe's best Christmas market multiple times. The Zagreb markets feature entire stalls dedicated to fritule, with queues stretching through the cold December air as the doughnuts are fried to order and handed over in a paper bag still steaming. The name comes from the Venetian dialect — a reminder of the centuries of shared maritime heritage along the Adriatic.</p></div>
+  </div>
+</article>
+
+<!-- R31 MEDENJACI -->
+<article class="recipe fade-in">
+  <div class="recipe-top">
+    <div class="food-card" style="padding:0;overflow:hidden;background:#111">
+      <img src="https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=600&q=80" alt="Croatian honey gingerbread" style="width:100%;height:100%;object-fit:cover;display:block;min-height:200px">
+    </div>
+    <div class="recipe-header">
+      <div class="recipe-num">20</div>
+      <div class="recipe-name">Medenjaci — Licitarsko Srce</div>
+      <div class="recipe-phonetic">meh-deh-NYAH-tsee / lee-TSEE-tar-skoh SUR-tseh</div>
+      <div class="recipe-tagline">Croatia's most beloved honey gingerbread — a 500-year-old UNESCO-protected art form from Zagreb</div>
+      <div class="recipe-pills"><span class="rpill">⏱ 30 min + 1hr chill</span><span class="rpill">👥 ~60 cookies</span><span class="rpill">★★☆☆☆</span><span class="rpill">🏛️ UNESCO Listed</span></div>
+    </div>
+  </div>
+  <div class="recipe-body">
+    <div class="recipe-grid">
+      <div><h3>🧅 Ingredients</h3><ul class="ing-list">
+        <li><span>Plain flour</span><span class="amt">500 g</span></li>
+        <li><span>Dark fragrant honey</span><span class="amt">180 g</span></li>
+        <li><span>Sugar, butter, eggs</span><span class="amt">100 g / 100 g / 2</span></li>
+        <li><span>Cinnamon, ground cloves</span><span class="amt">2 tsp / ½ tsp</span></li>
+        <li><span>Ground ginger, nutmeg</span><span class="amt">1 tsp / ¼ tsp</span></li>
+        <li><span>Baking soda, lemon zest</span><span class="amt">1 tsp / 1 lemon</span></li>
+        <li><span>Icing sugar (royal icing)</span><span class="amt">200 g</span></li>
+        <li><span>Egg white, lemon juice (icing)</span><span class="amt">1 large / 1 tsp</span></li>
+        <li><span>Food colouring (red, for traditional hearts)</span><span class="amt">optional</span></li>
+      </ul></div>
+      <div><h3>👨‍🍳 Instructions</h3><ol class="steps">
+        <li>In a small saucepan, gently warm honey, sugar and butter together over low heat until the butter melts and the sugar dissolves. Do not allow to boil. Pour into a large bowl and cool to room temperature — warm dough will not hold its shape when cut.</li>
+        <li>Beat in the eggs one at a time. Add lemon zest and all the spices and mix well. Sift in the flour and baking soda and mix until a firm, smooth dough forms. If the dough is too sticky, add flour one tablespoon at a time. Wrap in cling film and refrigerate for a minimum of 1 hour.</li>
+        <li>Remove dough from refrigerator. On a well-floured surface, roll to approximately 5mm thickness — thin enough to bake through, thick enough to hold shape. Cut into traditional shapes: hearts, stars, birds or rounds. Place on lined baking trays, spacing well apart.</li>
+        <li>Bake at 175°C for 10–12 minutes until the tops are set and just barely beginning to turn golden at the edges. They will feel slightly soft when removed — they firm up completely as they cool. Allow to cool fully on wire racks before decorating.</li>
+        <li>Make royal icing: beat icing sugar, egg white and lemon juice with an electric mixer for 3–4 minutes until thick, bright white and completely smooth. Transfer to piping bags. Pipe decorative patterns — flowers, lattices, dots and borders — onto cooled medenjaci. Allow icing to set hard (2 hours) before storing in tins lined with paper.</li>
+      </ol></div>
+    </div>
+    <div class="nutr"><h3>📊 Nutrition per 3 Cookies</h3><div class="nutr-grid">
+      <div class="ni"><span class="nv">185</span><span class="nl">Calories</span></div>
+      <div class="ni"><span class="nv">3g</span><span class="nl">Protein</span></div>
+      <div class="ni"><span class="nv">32g</span><span class="nl">Carbs</span></div>
+      <div class="ni"><span class="nv">6g</span><span class="nl">Fat</span></div>
+      <div class="ni"><span class="nv">0.5g</span><span class="nl">Fibre</span></div>
+      <div class="ni"><span class="nv">55mg</span><span class="nl">Sodium</span></div>
+    </div></div>
+    <div class="tip"><strong>💡 Chef's Tip</strong><p>Use dark, strongly flavoured honey for maximum depth — acacia honey is too mild and produces a flat-tasting result. Forest honey or chestnut honey work beautifully. The dough MUST be cold when rolled — warm dough spreads and loses its shape during baking. Medenjaci actually improve with age, mellowing and deepening in flavour over 3–4 days. They keep for weeks in a sealed tin.</p></div>
+    <div class="tradition"><strong>🎊 Tradition — Zagreb and the Licitar Heart</strong><p>The Croatian tradition of decorated honey gingerbread (licitarsko srce — the licitar heart) is inscribed on the UNESCO Intangible Cultural Heritage list. The bright red icing-covered heart-shaped medenjaci is one of the most iconic symbols of Zagreb — given as tokens of love, luck, friendship and celebration for over 500 years. Zagreb's Christmas Advent market, voted Europe's best multiple times, is filled with licitar hearts hung from every stall and tree. The craft of licitar-making (licitarstvo) has been practiced by Zagreb artisan families for generations — some workshops date to the 18th century and their painted designs have remained unchanged for over 200 years.</p></div>
+  </div>
+</article>
+
+</div><!-- end recipes-wrapper -->
+
+
+<!-- PREMIUM TEASER -->
+<section style="background:var(--navy);padding:60px 32px;text-align:center">
+  <div style="max-width:600px;margin:0 auto">
+    <div style="font-family:'Raleway',sans-serif;font-size:.68rem;font-weight:800;letter-spacing:.45em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:16px">✦ Complete Edition ✦</div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:2.2rem;color:var(--white);margin-bottom:16px">Want All 50 Recipes?</h2>
+    <p style="font-family:'EB Garamond',serif;font-size:1.1rem;color:rgba(254,250,242,.75);line-height:1.8;margin-bottom:28px">The complete <em>Okusi Hrvatske</em> cookbook includes 50 authentic Croatian recipes — Pašticada, Crni Rižoto, Peka, Kvarnerski Škampi, Rozata, Orehnjača and 20 more dishes not found in the free edition. Beautifully formatted PDF, print-ready.</p>
+    <a href="#" style="display:inline-block;background:var(--gold);color:var(--ink);font-family:'Raleway',sans-serif;font-weight:800;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;padding:16px 40px;border-radius:40px;text-decoration:none">Get the Full Book — €14.99</a>
+    <p style="font-family:'Raleway',sans-serif;font-size:.72rem;color:rgba(254,250,242,.35);margin-top:16px">PDF download · All 6 regions · 50 complete recipes with nutrition info</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <h3>Okusi Hrvatske</h3>
+  <p>Tastes of Croatia — 20 Authentic Recipes Across 6 Regions</p>
+  <p style="margin-top:16px">🇭🇷 &nbsp; Dobar tek! — Bon Appétit! — Buon appetito!</p>
+  <p style="margin-top:20px;font-size:.73rem;opacity:.4">All recipes are based on traditional Croatian culinary heritage. Nutrition information is approximate and may vary based on specific ingredients and preparation methods used. Phonetic transcriptions are approximate guides for non-Croatian speakers. ©2024 Okusi Hrvatske Cookbook — All Rights Reserved</p>
+</footer>
+
+<script>
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold: 0.05, rootMargin: '0px 0px -30px 0px'});
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+// Smooth nav scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({behavior:'smooth', block:'start'}); }
+  });
+});
+</script>
+</body>
+</html>
