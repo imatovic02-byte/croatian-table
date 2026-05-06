@@ -227,32 +227,6 @@ footer h3{font-family:'Playfair Display',serif;color:var(--gold-lt);font-size:1.
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 .fade-in{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s}
 .fade-in.visible{opacity:1;transform:none}
-
-/* UNIT TOGGLE */
-.unit-toggle-bar{
-  position:sticky;top:68px;z-index:800;
-  background:var(--navy);padding:10px 32px;
-  display:flex;align-items:center;justify-content:flex-end;gap:12px;
-  border-bottom:1px solid rgba(196,153,58,.15);
-}
-.unit-toggle-label{
-  font-family:'Raleway',sans-serif;font-size:.68rem;font-weight:700;
-  letter-spacing:.15em;text-transform:uppercase;color:rgba(254,250,242,.5);
-}
-.unit-toggle{
-  display:flex;background:rgba(255,255,255,.08);border-radius:30px;
-  padding:3px;gap:2px;
-}
-.unit-btn{
-  font-family:'Raleway',sans-serif;font-size:.65rem;font-weight:800;
-  letter-spacing:.1em;text-transform:uppercase;padding:6px 16px;
-  border-radius:24px;border:none;cursor:pointer;transition:all .2s;
-  background:transparent;color:rgba(254,250,242,.45);
-}
-.unit-btn.active{
-  background:var(--gold);color:var(--ink);
-}
-@media print{.unit-toggle-bar{display:none}}
 </style>
 </head>
 <body>
@@ -441,15 +415,6 @@ footer h3{font-family:'Playfair Display',serif;color:var(--gold-lt);font-size:1.
 <!-- -->
 <!-- RECIPES -->
 <!-- -->
-
-<!-- UNIT TOGGLE BAR -->
-<div class="unit-toggle-bar">
-  <span class="unit-toggle-label">Units</span>
-  <div class="unit-toggle">
-    <button class="unit-btn active" id="btn-metric" onclick="setUnits('metric')">Metric</button>
-    <button class="unit-btn" id="btn-imperial" onclick="setUnits('imperial')">Imperial</button>
-  </div>
-</div>
 <div class="recipes-wrapper">
 
 <!-- ISTRIA & KVARNER -->
@@ -478,14 +443,14 @@ footer h3{font-family:'Playfair Display',serif;color:var(--gold-lt);font-size:1.
  <div class="recipe-body">
  <div class="recipe-grid">
  <div><h3> Ingredients</h3><ul class="ing-list">
- <li><span>Flour type 00</span><span class="amt"><span class="unit-metric">300 g</span><span class="unit-imperial" style="display:none">10½ oz</span></span></li>
+ <li><span>Flour type 00</span><span class="amt">300 g</span></li>
  <li><span>Eggs</span><span class="amt">3 large</span></li>
  <li><span>Olive oil, salt</span><span class="amt">1 tbsp / pinch</span></li>
- <li><span>Fresh white or black truffle</span><span class="amt"><span class="unit-metric">20–30 g</span><span class="unit-imperial" style="display:none">¾–1 oz</span></span></li>
+ <li><span>Fresh white or black truffle</span><span class="amt">20–30 g</span></li>
  <li><span>Or: quality truffle paste</span><span class="amt">2–3 tbsp</span></li>
- <li><span>Butter (high quality)</span><span class="amt"><span class="unit-metric">60 g</span><span class="unit-imperial" style="display:none">2 oz</span></span></li>
- <li><span>Heavy cream</span><span class="amt"><span class="unit-metric">150 ml</span><span class="unit-imperial" style="display:none">⅔ cup</span></span></li>
- <li><span>Parmigiano, freshly grated</span><span class="amt"><span class="unit-metric">60 g</span><span class="unit-imperial" style="display:none">2 oz</span></span></li>
+ <li><span>Butter (high quality)</span><span class="amt">60 g</span></li>
+ <li><span>Heavy cream</span><span class="amt">150 ml</span></li>
+ <li><span>Parmigiano, freshly grated</span><span class="amt">60 g</span></li>
  <li><span>Garlic clove</span><span class="amt">1</span></li>
  <li><span>Salt and white pepper</span><span class="amt">to taste</span></li>
  </ul></div>
@@ -528,16 +493,16 @@ footer h3{font-family:'Playfair Display',serif;color:var(--gold-lt);font-size:1.
  <div class="recipe-body">
  <div class="recipe-grid">
  <div><h3> Ingredients</h3><ul class="ing-list">
- <li><span>Dried borlotti beans, soaked overnight</span><span class="amt"><span class="unit-metric">300 g</span><span class="unit-imperial" style="display:none">10½ oz</span></span></li>
- <li><span>Dried corn (bobići), soaked overnight</span><span class="amt"><span class="unit-metric">200 g</span><span class="unit-imperial" style="display:none">7 oz</span></span></li>
- <li><span>Smoked pork ribs or pancetta</span><span class="amt"><span class="unit-metric">300 g</span><span class="unit-imperial" style="display:none">10½ oz</span></span></li>
+ <li><span>Dried borlotti beans, soaked overnight</span><span class="amt">300 g</span></li>
+ <li><span>Dried corn (bobići), soaked overnight</span><span class="amt">200 g</span></li>
+ <li><span>Smoked pork ribs or pancetta</span><span class="amt">300 g</span></li>
  <li><span>Onion, diced</span><span class="amt">1 large</span></li>
  <li><span>Garlic, crushed</span><span class="amt">4 cloves</span></li>
  <li><span>Carrots, celery, diced</span><span class="amt">2 each</span></li>
- <li><span>Canned crushed tomatoes</span><span class="amt"><span class="unit-metric">200 g</span><span class="unit-imperial" style="display:none">7 oz</span></span></li>
- <li><span>Istrian extra virgin olive oil</span><span class="amt"><span class="unit-metric">50 ml</span><span class="unit-imperial" style="display:none">3 tbsp</span></span></li>
+ <li><span>Canned crushed tomatoes</span><span class="amt">200 g</span></li>
+ <li><span>Istrian extra virgin olive oil</span><span class="amt">50 ml</span></li>
  <li><span>Fresh parsley, bay leaves</span><span class="amt">bunch + 3</span></li>
- <li><span>Water or light stock</span><span class="amt"><span class="unit-metric">1.5 litres</span><span class="unit-imperial" style="display:none">6 cups</span></span></li>
+ <li><span>Water or light stock</span><span class="amt">1.5 litres</span></li>
  </ul></div>
  <div><h3>‍ Instructions</h3><ol class="steps">
  <li>Drain soaked beans and corn. Place in a large pot with smoked pork ribs and water. Bring to a boil, skim foam carefully, reduce to a steady simmer. Cook 45 minutes.</li>
@@ -579,8 +544,8 @@ footer h3{font-family:'Playfair Display',serif;color:var(--gold-lt);font-size:1.
  <div class="recipe-grid">
  <div><h3> Ingredients</h3><ul class="ing-list">
  <li><span>Fresh eggs</span><span class="amt">4 large</span></li>
- <li><span>Fresh truffle or truffle paste</span><span class="amt"><span class="unit-metric">10 g / 1 tbsp</span><span class="unit-imperial" style="display:none">⅓ oz / 1 tbsp</span></span></li>
- <li><span>Butter</span><span class="amt"><span class="unit-metric">30 g</span><span class="unit-imperial" style="display:none">1 oz</span></span></li>
+ <li><span>Fresh truffle or truffle paste</span><span class="amt">10 g / 1 tbsp</span></li>
+ <li><span>Butter</span><span class="amt">30 g</span></li>
  <li><span>Heavy cream</span><span class="amt">2 tbsp</span></li>
  <li><span>Salt and white pepper</span><span class="amt">to taste</span></li>
  <li><span>Fresh chives (optional)</span><span class="amt">small bunch</span></li>
@@ -631,15 +596,15 @@ footer h3{font-family:'Playfair Display',serif;color:var(--gold-lt);font-size:1.
  <div class="recipe-body">
  <div class="recipe-grid">
  <div><h3> Ingredients</h3><ul class="ing-list">
- <li><span>Mixed Adriatic fish (scorpionfish, monkfish, sea bass)</span><span class="amt"><span class="unit-metric">1.5 kg</span><span class="unit-imperial" style="display:none">3 lbs 5 oz</span></span></li>
+ <li><span>Mixed Adriatic fish (scorpionfish, monkfish, sea bass)</span><span class="amt">1.5 kg</span></li>
  <li><span>Onions, finely sliced</span><span class="amt">3 large</span></li>
- <li><span>Garlic, canned tomatoes</span><span class="amt"><span class="unit-metric">5 cloves / 400 g</span><span class="unit-imperial" style="display:none">5 cloves / 14 oz</span></span></li>
- <li><span>Dry white wine</span><span class="amt"><span class="unit-metric">200 ml</span><span class="unit-imperial" style="display:none">¾ cup</span></span></li>
- <li><span>Extra virgin olive oil</span><span class="amt"><span class="unit-metric">80 ml</span><span class="unit-imperial" style="display:none">⅓ cup</span></span></li>
+ <li><span>Garlic, canned tomatoes</span><span class="amt">5 cloves / 400 g</span></li>
+ <li><span>Dry white wine</span><span class="amt">200 ml</span></li>
+ <li><span>Extra virgin olive oil</span><span class="amt">80 ml</span></li>
  <li><span>Red wine vinegar</span><span class="amt">2 tbsp</span></li>
  <li><span>Fresh parsley, bay leaves</span><span class="amt">bunch + 3</span></li>
  <li><span>Salt and black pepper</span><span class="amt">to taste</span></li>
- <li><span>Water</span><span class="amt"><span class="unit-metric">150 ml</span><span class="unit-imperial" style="display:none">⅔ cup</span></span></li>
+ <li><span>Water</span><span class="amt">150 ml</span></li>
  </ul><p style="font-size:.82rem;color:var(--stone);margin-top:8px;font-style:italic">Serve with polenta or crusty white bread</p></div>
  <div><h3>‍ Instructions</h3><ol class="steps">
  <li>Clean and gut the fish. Cut larger fish into thick steaks; leave smaller fish whole. Season generously with salt on all sides and set aside for 15 minutes.</li>
@@ -679,13 +644,13 @@ footer h3{font-family:'Playfair Display',serif;color:var(--gold-lt);font-size:1.
  <div class="recipe-body">
  <div class="recipe-grid">
  <div><h3> Ingredients</h3><ul class="ing-list">
- <li><span>Plain flour type 00</span><span class="amt"><span class="unit-metric">500 g</span><span class="unit-imperial" style="display:none">1 lb 2 oz</span></span></li>
- <li><span>Warm water, olive oil, salt</span><span class="amt"><span class="unit-metric">280 ml / 3 tbsp / 1 tsp</span><span class="unit-imperial" style="display:none">1¼ cups / 3 tbsp / 1 tsp</span></span></li>
- <li><span>Swiss chard, finely chopped — RAW</span><span class="amt"><span class="unit-metric">1.2 kg</span><span class="unit-imperial" style="display:none">2 lbs 10 oz</span></span></li>
+ <li><span>Plain flour type 00</span><span class="amt">500 g</span></li>
+ <li><span>Warm water, olive oil, salt</span><span class="amt">280 ml / 3 tbsp / 1 tsp</span></li>
+ <li><span>Swiss chard, finely chopped — RAW</span><span class="amt">1.2 kg</span></li>
  <li><span>Garlic, very finely minced</span><span class="amt">6 cloves</span></li>
  <li><span>Fresh parsley, finely chopped</span><span class="amt">large handful</span></li>
  <li><span>Spring onions, finely sliced</span><span class="amt">4 stalks</span></li>
- <li><span>Olive oil (for filling)</span><span class="amt"><span class="unit-metric">50 ml</span><span class="unit-imperial" style="display:none">3 tbsp</span></span></li>
+ <li><span>Olive oil (for filling)</span><span class="amt">50 ml</span></li>
  <li><span>Salt and black pepper</span><span class="amt">to taste</span></li>
  <li><span>Olive oil + garlic (for finishing)</span><span class="amt">3 tbsp + 2 cloves</span></li>
  </ul></div>
@@ -728,10 +693,10 @@ footer h3{font-family:'Playfair Display',serif;color:var(--gold-lt);font-size:1.
  <div class="recipe-body">
  <div class="recipe-grid">
  <div><h3> Ingredients</h3><ul class="ing-list">
- <li><span>Fresh mussels, scrubbed and de-bearded</span><span class="amt"><span class="unit-metric">2 kg</span><span class="unit-imperial" style="display:none">4½ lbs</span></span></li>
+ <li><span>Fresh mussels, scrubbed and de-bearded</span><span class="amt">2 kg</span></li>
  <li><span>Garlic cloves, finely sliced</span><span class="amt">6 cloves</span></li>
- <li><span>Dry white wine</span><span class="amt"><span class="unit-metric">200 ml</span><span class="unit-imperial" style="display:none">¾ cup</span></span></li>
- <li><span>Extra virgin olive oil</span><span class="amt"><span class="unit-metric">60 ml</span><span class="unit-imperial" style="display:none">¼ cup</span></span></li>
+ <li><span>Dry white wine</span><span class="amt">200 ml</span></li>
+ <li><span>Extra virgin olive oil</span><span class="amt">60 ml</span></li>
  <li><span>Fresh parsley, finely chopped</span><span class="amt">large bunch</span></li>
  <li><span>Breadcrumbs</span><span class="amt">2 tbsp</span></li>
  <li><span>Lemon, salt, black pepper</span><span class="amt">1 lemon / to taste</span></li>
@@ -775,15 +740,15 @@ footer h3{font-family:'Playfair Display',serif;color:var(--gold-lt);font-size:1.
  <div class="recipe-body">
  <div class="recipe-grid">
  <div><h3> Ingredients</h3><ul class="ing-list">
- <li><span>Whole sea bream (orada), gutted, scaled</span><span class="amt"><span class="unit-metric">4 × 400g</span><span class="unit-imperial" style="display:none">4 × 14 oz</span></span></li>
- <li><span>Extra virgin olive oil (excellent)</span><span class="amt"><span class="unit-metric">80 ml</span><span class="unit-imperial" style="display:none">⅓ cup</span></span></li>
+ <li><span>Whole sea bream (orada), gutted, scaled</span><span class="amt">4 × 400g</span></li>
+ <li><span>Extra virgin olive oil (excellent)</span><span class="amt">80 ml</span></li>
  <li><span>Coarse sea salt</span><span class="amt">generous</span></li>
  <li><span>Fresh lemons</span><span class="amt">2</span></li>
  <li><span>Fresh rosemary and sage</span><span class="amt">few sprigs each</span></li>
  <li><span>Garlic cloves, sliced</span><span class="amt">3 cloves</span></li>
- <li><span>Swiss chard</span><span class="amt"><span class="unit-metric">400 g</span><span class="unit-imperial" style="display:none">14 oz</span></span></li>
+ <li><span>Swiss chard</span><span class="amt">400 g</span></li>
  <li><span>Potatoes, boiled and halved</span><span class="amt">4 medium</span></li>
- <li><span>Garlic + olive oil (for blitva)</span><span class="amt"><span class="unit-metric">3 cloves + 40 ml</span><span class="unit-imperial" style="display:none">3 cloves + 3 tbsp</span></span></li>
+ <li><span>Garlic + olive oil (for blitva)</span><span class="amt">3 cloves + 40 ml</span></li>
  </ul></div>
  <div><h3>‍ Instructions</h3><ol class="steps">
  <li>Score the fish 3 times diagonally on each side with a sharp knife. Season very generously inside and out with coarse sea salt. Stuff the cavity with rosemary, sage and sliced garlic. Drizzle all over with olive oil.</li>
@@ -832,15 +797,15 @@ footer h3{font-family:'Playfair Display',serif;color:var(--gold-lt);font-size:1.
  <div class="recipe-body">
  <div class="recipe-grid">
  <div><h3> Ingredients</h3><ul class="ing-list">
- <li><span>Plain flour</span><span class="amt"><span class="unit-metric">400 g</span><span class="unit-imperial" style="display:none">14 oz</span></span></li>
- <li><span>Egg, oil, salt, warm water</span><span class="amt"><span class="unit-metric">1 / 1 tbsp / ½ tsp / ~180 ml</span><span class="unit-imperial" style="display:none">1 / 1 tbsp / ½ tsp / ¾ cup</span></span></li>
- <li><span>Fresh cow's cheese (svježi sir)</span><span class="amt"><span class="unit-metric">500 g</span><span class="unit-imperial" style="display:none">1 lb 2 oz</span></span></li>
- <li><span>Sour cream (for filling)</span><span class="amt"><span class="unit-metric">150 g</span><span class="unit-imperial" style="display:none">5½ oz</span></span></li>
+ <li><span>Plain flour</span><span class="amt">400 g</span></li>
+ <li><span>Egg, oil, salt, warm water</span><span class="amt">1 / 1 tbsp / ½ tsp / ~180 ml</span></li>
+ <li><span>Fresh cow's cheese (svježi sir)</span><span class="amt">500 g</span></li>
+ <li><span>Sour cream (for filling)</span><span class="amt">150 g</span></li>
  <li><span>Eggs (for filling)</span><span class="amt">3 large</span></li>
- <li><span>Salt, melted butter</span><span class="amt"><span class="unit-metric">1 tsp / 50 g</span><span class="unit-imperial" style="display:none">1 tsp / 1¾ oz</span></span></li>
- <li><span>Sour cream (for baking)</span><span class="amt"><span class="unit-metric">400 ml</span><span class="unit-imperial" style="display:none">1⅔ cups</span></span></li>
+ <li><span>Salt, melted butter</span><span class="amt">1 tsp / 50 g</span></li>
+ <li><span>Sour cream (for baking)</span><span class="amt">400 ml</span></li>
  <li><span>Eggs (for baking)</span><span class="amt">2 large</span></li>
- <li><span>Butter (for greasing)</span><span class="amt"><span class="unit-metric">30 g</span><span class="unit-imperial" style="display:none">1 oz</span></span></li>
+ <li><span>Butter (for greasing)</span><span class="amt">30 g</span></li>
  </ul></div>
  <div><h3>‍ Instructions</h3><ol class="steps">
  <li>Make dough: mix flour, egg, oil and salt. Add warm water gradually, mixing until a smooth, slightly elastic dough forms. Knead for 10 minutes. Cover with a cloth and rest 30 minutes — the dough must relax fully before rolling.</li>
@@ -882,13 +847,13 @@ footer h3{font-family:'Playfair Display',serif;color:var(--gold-lt);font-size:1.
  <div class="recipe-grid">
  <div><h3> Ingredients</h3><ul class="ing-list">
  <li><span>Whole sauerkraut head (kiseli kupus)</span><span class="amt">1 large head</span></li>
- <li><span>Mixed minced pork and beef</span><span class="amt"><span class="unit-metric">800 g</span><span class="unit-imperial" style="display:none">1 lb 12 oz</span></span></li>
- <li><span>Short-grain rice, uncooked</span><span class="amt"><span class="unit-metric">100 g</span><span class="unit-imperial" style="display:none">3½ oz</span></span></li>
+ <li><span>Mixed minced pork and beef</span><span class="amt">800 g</span></li>
+ <li><span>Short-grain rice, uncooked</span><span class="amt">100 g</span></li>
  <li><span>Onion finely grated, garlic crushed</span><span class="amt">1 large / 3 cloves</span></li>
  <li><span>Sweet paprika</span><span class="amt">2 tbsp</span></li>
- <li><span>Smoked bacon or pork belly (for base)</span><span class="amt"><span class="unit-metric">200 g</span><span class="unit-imperial" style="display:none">7 oz</span></span></li>
+ <li><span>Smoked bacon or pork belly (for base)</span><span class="amt">200 g</span></li>
  <li><span>Egg, salt, black pepper</span><span class="amt">1 egg / to taste</span></li>
- <li><span>Sour cream (to serve)</span><span class="amt"><span class="unit-metric">200 ml</span><span class="unit-imperial" style="display:none">¾ cup</span></span></li>
+ <li><span>Sour cream (to serve)</span><span class="amt">200 ml</span></li>
  </ul></div>
  <div><h3>‍ Instructions</h3><ol class="steps">
  <li>Carefully separate large outer leaves from the sauerkraut head, keeping them whole and unbroken. Rinse briefly under cold water if they are very sour — though some sourness is essential to the dish.</li>
@@ -928,15 +893,15 @@ footer h3{font-family:'Playfair Display',serif;color:var(--gold-lt);font-size:1.
  <div class="recipe-body">
  <div class="recipe-grid">
  <div><h3> Ingredients</h3><ul class="ing-list">
- <li><span>Mixed mushrooms (forest, cremini, porcini)</span><span class="amt"><span class="unit-metric">600 g</span><span class="unit-imperial" style="display:none">1 lb 5 oz</span></span></li>
- <li><span>Dried porcini mushrooms, soaked in 200ml hot water</span><span class="amt"><span class="unit-metric">20 g</span><span class="unit-imperial" style="display:none">¾ oz</span></span></li>
+ <li><span>Mixed mushrooms (forest, cremini, porcini)</span><span class="amt">600 g</span></li>
+ <li><span>Dried porcini mushrooms, soaked in 200ml hot water</span><span class="amt">20 g</span></li>
  <li><span>Onion, finely diced</span><span class="amt">1 large</span></li>
  <li><span>Garlic, minced</span><span class="amt">3 cloves</span></li>
- <li><span>Butter</span><span class="amt"><span class="unit-metric">60 g</span><span class="unit-imperial" style="display:none">2 oz</span></span></li>
- <li><span>Chicken or vegetable stock</span><span class="amt"><span class="unit-metric">800 ml</span><span class="unit-imperial" style="display:none">3⅓ cups</span></span></li>
- <li><span>Sour cream (kiselo vrhnje)</span><span class="amt"><span class="unit-metric">200 ml</span><span class="unit-imperial" style="display:none">¾ cup</span></span></li>
+ <li><span>Butter</span><span class="amt">60 g</span></li>
+ <li><span>Chicken or vegetable stock</span><span class="amt">800 ml</span></li>
+ <li><span>Sour cream (kiselo vrhnje)</span><span class="amt">200 ml</span></li>
  <li><span>Fresh thyme, bay leaf</span><span class="amt">4 sprigs / 2</span></li>
- <li><span>White wine</span><span class="amt"><span class="unit-metric">100 ml</span><span class="unit-imperial" style="display:none">7 tbsp</span></span></li>
+ <li><span>White wine</span><span class="amt">100 ml</span></li>
  <li><span>Fresh parsley</span><span class="amt">handful</span></li>
  <li><span>Salt and white pepper</span><span class="amt">to taste</span></li>
  </ul></div>
@@ -988,9 +953,9 @@ footer h3{font-family:'Playfair Display',serif;color:var(--gold-lt);font-size:1.
  <div class="recipe-body">
  <div class="recipe-grid">
  <div><h3> Ingredients</h3><ul class="ing-list">
- <li><span>Potatoes, peeled and sliced 5mm</span><span class="amt"><span class="unit-metric">1 kg</span><span class="unit-imperial" style="display:none">2¼ lbs</span></span></li>
- <li><span>Smoked pork ribs or bacon</span><span class="amt"><span class="unit-metric">300 g</span><span class="unit-imperial" style="display:none">10½ oz</span></span></li>
- <li><span>Sour cream</span><span class="amt"><span class="unit-metric">300 ml</span><span class="unit-imperial" style="display:none">1¼ cups</span></span></li>
+ <li><span>Potatoes, peeled and sliced 5mm</span><span class="amt">1 kg</span></li>
+ <li><span>Smoked pork ribs or bacon</span><span class="amt">300 g</span></li>
+ <li><span>Sour cream</span><span class="amt">300 ml</span></li>
  <li><span>Onion, finely sliced</span><span class="amt">2 medium</span></li>
  <li><span>Garlic cloves, crushed</span><span class="amt">4 cloves</span></li>
  <li><span>Fresh thyme</span><span class="amt">4 sprigs</span></li>
@@ -1035,9 +1000,9 @@ footer h3{font-family:'Playfair Display',serif;color:var(--gold-lt);font-size:1.
  <div class="recipe-body">
  <div class="recipe-grid">
  <div><h3> Ingredients</h3><ul class="ing-list">
- <li><span>Dried beans (borlotti or cranberry), soaked overnight</span><span class="amt"><span class="unit-metric">400 g</span><span class="unit-imperial" style="display:none">14 oz</span></span></li>
- <li><span>Smoked sausage (kobasica)</span><span class="amt"><span class="unit-metric">400 g</span><span class="unit-imperial" style="display:none">14 oz</span></span></li>
- <li><span>Smoked pork ribs</span><span class="amt"><span class="unit-metric">300 g</span><span class="unit-imperial" style="display:none">10½ oz</span></span></li>
+ <li><span>Dried beans (borlotti or cranberry), soaked overnight</span><span class="amt">400 g</span></li>
+ <li><span>Smoked sausage (kobasica)</span><span class="amt">400 g</span></li>
+ <li><span>Smoked pork ribs</span><span class="amt">300 g</span></li>
  <li><span>Onion, garlic</span><span class="amt">2 large / 5 cloves</span></li>
  <li><span>Carrots, celery</span><span class="amt">2 each</span></li>
  <li><span>Sweet paprika, bay leaves</span><span class="amt">1 tbsp / 3</span></li>
@@ -1091,14 +1056,14 @@ footer h3{font-family:'Playfair Display',serif;color:var(--gold-lt);font-size:1.
  <div class="recipe-body">
  <div class="recipe-grid">
  <div><h3> Ingredients</h3><ul class="ing-list">
- <li><span>Carp (krap), cut into thick steaks</span><span class="amt"><span class="unit-metric">1.5 kg</span><span class="unit-imperial" style="display:none">3 lbs 5 oz</span></span></li>
- <li><span>Catfish or pike</span><span class="amt"><span class="unit-metric">500 g</span><span class="unit-imperial" style="display:none">1 lb 2 oz</span></span></li>
+ <li><span>Carp (krap), cut into thick steaks</span><span class="amt">1.5 kg</span></li>
+ <li><span>Catfish or pike</span><span class="amt">500 g</span></li>
  <li><span>Onions, very finely diced</span><span class="amt">4 large</span></li>
  <li><span>Sweet red paprika</span><span class="amt">4 tbsp</span></li>
  <li><span>Hot paprika</span><span class="amt">1–2 tsp</span></li>
- <li><span>Ripe tomatoes, green pepper, garlic</span><span class="amt"><span class="unit-metric">300g / 1 / 4 cloves</span><span class="unit-imperial" style="display:none">10½ oz / 1 / 4 cloves</span></span></li>
- <li><span>Sunflower oil</span><span class="amt"><span class="unit-metric">60 ml</span><span class="unit-imperial" style="display:none">¼ cup</span></span></li>
- <li><span>White wine, fish stock, bay leaves</span><span class="amt"><span class="unit-metric">200ml / 600ml / 3</span><span class="unit-imperial" style="display:none">¾ cup / 2½ cups / 3</span></span></li>
+ <li><span>Ripe tomatoes, green pepper, garlic</span><span class="amt">300g / 1 / 4 cloves</span></li>
+ <li><span>Sunflower oil</span><span class="amt">60 ml</span></li>
+ <li><span>White wine, fish stock, bay leaves</span><span class="amt">200ml / 600ml / 3</span></li>
  <li><span>Salt</span><span class="amt">to taste</span></li>
  </ul><p style="font-size:.82rem;color:var(--stone);margin-top:8px;font-style:italic">Serve with homemade egg noodles (domaći rezanci)</p></div>
  <div><h3>‍ Instructions</h3><ol class="steps">
@@ -1140,12 +1105,12 @@ footer h3{font-family:'Playfair Display',serif;color:var(--gold-lt);font-size:1.
  <div class="recipe-grid">
  <div><h3> Ingredients</h3><ul class="ing-list">
  <li><span>Large pointed peppers (kapija)</span><span class="amt">8 peppers</span></li>
- <li><span>Mixed minced pork and beef</span><span class="amt"><span class="unit-metric">600 g</span><span class="unit-imperial" style="display:none">1 lb 5 oz</span></span></li>
- <li><span>Short-grain rice, uncooked</span><span class="amt"><span class="unit-metric">80 g</span><span class="unit-imperial" style="display:none">2¾ oz</span></span></li>
+ <li><span>Mixed minced pork and beef</span><span class="amt">600 g</span></li>
+ <li><span>Short-grain rice, uncooked</span><span class="amt">80 g</span></li>
  <li><span>Onion grated, garlic crushed</span><span class="amt">1 large / 2 cloves</span></li>
  <li><span>Egg, sweet paprika</span><span class="amt">1 large / 2 tsp</span></li>
- <li><span>Tomato passata</span><span class="amt"><span class="unit-metric">600 ml</span><span class="unit-imperial" style="display:none">2½ cups</span></span></li>
- <li><span>Sour cream (to serve)</span><span class="amt"><span class="unit-metric">150 ml</span><span class="unit-imperial" style="display:none">⅔ cup</span></span></li>
+ <li><span>Tomato passata</span><span class="amt">600 ml</span></li>
+ <li><span>Sour cream (to serve)</span><span class="amt">150 ml</span></li>
  <li><span>Salt, pepper, bay leaves</span><span class="amt">to taste</span></li>
  </ul></div>
  <div><h3>‍ Instructions</h3><ol class="steps">
@@ -1186,17 +1151,17 @@ footer h3{font-family:'Playfair Display',serif;color:var(--gold-lt);font-size:1.
  <div class="recipe-body">
  <div class="recipe-grid">
  <div><h3> Ingredients</h3><ul class="ing-list">
- <li><span>Beef (chuck), diced 4cm</span><span class="amt"><span class="unit-metric">500 g</span><span class="unit-imperial" style="display:none">1 lb 2 oz</span></span></li>
- <li><span>Pork shoulder, diced 4cm</span><span class="amt"><span class="unit-metric">400 g</span><span class="unit-imperial" style="display:none">14 oz</span></span></li>
- <li><span>Lamb shoulder, diced 4cm</span><span class="amt"><span class="unit-metric">300 g</span><span class="unit-imperial" style="display:none">10½ oz</span></span></li>
+ <li><span>Beef (chuck), diced 4cm</span><span class="amt">500 g</span></li>
+ <li><span>Pork shoulder, diced 4cm</span><span class="amt">400 g</span></li>
+ <li><span>Lamb shoulder, diced 4cm</span><span class="amt">300 g</span></li>
  <li><span>Onions, finely diced</span><span class="amt">4 large</span></li>
  <li><span>Sweet paprika</span><span class="amt">4 tbsp</span></li>
  <li><span>Hot paprika</span><span class="amt">2 tsp (or more)</span></li>
  <li><span>Garlic, crushed</span><span class="amt">5 cloves</span></li>
- <li><span>Tomatoes, diced</span><span class="amt"><span class="unit-metric">300 g</span><span class="unit-imperial" style="display:none">10½ oz</span></span></li>
+ <li><span>Tomatoes, diced</span><span class="amt">300 g</span></li>
  <li><span>Green pepper, diced</span><span class="amt">2 large</span></li>
- <li><span>Dry white wine</span><span class="amt"><span class="unit-metric">200 ml</span><span class="unit-imperial" style="display:none">¾ cup</span></span></li>
- <li><span>Sunflower oil</span><span class="amt"><span class="unit-metric">60 ml</span><span class="unit-imperial" style="display:none">¼ cup</span></span></li>
+ <li><span>Dry white wine</span><span class="amt">200 ml</span></li>
+ <li><span>Sunflower oil</span><span class="amt">60 ml</span></li>
  <li><span>Bay leaves, salt</span><span class="amt">3 / to taste</span></li>
  </ul></div>
  <div><h3>‍ Instructions</h3><ol class="steps">
@@ -1230,62 +1195,56 @@ footer h3{font-family:'Playfair Display',serif;color:var(--gold-lt);font-size:1.
  </div>
 </div>
 
- in summer, green beans replace the kale; in autumn, pumpkin may be added.</p></div>
- </div>
-</article>
-
 <!-- R25 ZELENA MENESTRA -->
 <article class="recipe fade-in">
-  <div class="recipe-top">
-    <div class="food-card" style="padding:0;overflow:hidden;background:#111">
-      <img src="zelena menestra.jpg" alt="Zelena menestra" style="width:100%;height:100%;object-fit:cover;display:block;min-height:200px">
-    </div>
-    <div class="recipe-header">
-      <div class="recipe-num">16</div>
-      <div class="recipe-name">Zelena Menestra</div>
-      <div class="recipe-phonetic">ZEH-leh-nah meh-NEH-strah</div>
-      <div class="recipe-tagline">Dubrovnik's most authentic dish — three cabbages, four meats and kaštradina simmered into one extraordinary pot</div>
-      <div class="recipe-pills"><span class="rpill">30 min + 3hr cook</span><span class="rpill">6–8 servings</span><span class="rpill">Dingač or Plavac Mali</span></div>
-    </div>
-  </div>
-  <div class="recipe-body">
-    <div class="recipe-grid">
-      <div><h3>Ingredients</h3><ul class="ing-list">
-        <li><span>Kaštradina (salted dried mutton), soaked overnight</span><span class="amt"><span class="unit-metric">400 g</span><span class="unit-imperial" style="display:none">14 oz</span></span></li>
-        <li><span>Smoked pork shank</span><span class="amt"><span class="unit-metric">600 g</span><span class="unit-imperial" style="display:none">1 lb 5 oz</span></span></li>
-        <li><span>Smoked pork ribs</span><span class="amt"><span class="unit-metric">400 g</span><span class="unit-imperial" style="display:none">14 oz</span></span></li>
-        <li><span>Smoked sausage (kobasica)</span><span class="amt"><span class="unit-metric">300 g</span><span class="unit-imperial" style="display:none">10½ oz</span></span></li>
-        <li><span>Raštika (cavolo nero / black cabbage)</span><span class="amt"><span class="unit-metric">400 g</span><span class="unit-imperial" style="display:none">14 oz</span></span></li>
-        <li><span>Kelj (savoy cabbage), roughly chopped</span><span class="amt"><span class="unit-metric">400 g</span><span class="unit-imperial" style="display:none">14 oz</span></span></li>
-        <li><span>Kupus (white cabbage), roughly chopped</span><span class="amt"><span class="unit-metric">300 g</span><span class="unit-imperial" style="display:none">10½ oz</span></span></li>
-        <li><span>Potatoes, peeled and quartered</span><span class="amt"><span class="unit-metric">500 g</span><span class="unit-imperial" style="display:none">1 lb 2 oz</span></span></li>
-        <li><span>Onion, roughly chopped</span><span class="amt">1 large</span></li>
-        <li><span>Garlic, whole cloves</span><span class="amt">5 cloves</span></li>
-        <li><span>Extra virgin olive oil</span><span class="amt">4 tbsp</span></li>
-        <li><span>Bay leaves, black peppercorns</span><span class="amt">3 / 1 tsp</span></li>
-        <li><span>Cold water</span><span class="amt"><span class="unit-metric">2.5 litres</span><span class="unit-imperial" style="display:none">10 cups</span></span></li>
-        <li><span>Salt</span><span class="amt">to taste — all meats are already salty</span></li>
-      </ul></div>
-      <div><h3>Instructions</h3><ol class="steps">
-        <li>The night before: soak the kaštradina in cold water to remove excess salt, changing the water once or twice. Kaštradina — salted and wind-dried mutton from the Dalmatian hinterland — is the defining ingredient of authentic zelena menestra and cannot be substituted. If unavailable, use additional smoked lamb or mutton.</li>
-        <li>Drain the kaštradina. Place it in a large pot with the smoked pork shank and ribs. Cover with cold water, bring to a boil and immediately drain — this initial blanching removes impurities and excess salt from all the meats simultaneously. Refill with 2.5 litres of fresh cold water.</li>
-        <li>Bring back to a boil, add the onion, garlic, bay leaves and peppercorns. Reduce to a steady, gentle simmer. Cook uncovered for 1.5 hours, skimming any foam carefully in the first 20 minutes. The broth will gradually turn deep golden and intensely fragrant from the combination of the four meats.</li>
-        <li>Add the potatoes and all three cabbages — raštika first as it takes the longest to become tender, then kelj and kupus. Stir gently to submerge everything in the broth. Add the sliced sausage at this point as well.</li>
-        <li>Continue simmering for a further 45–60 minutes until all three cabbages are completely tender and yielding, the potatoes are soft, and the broth is rich, deeply coloured and slightly thickened from the potato starch. The raštika should be very soft — it should offer almost no resistance when pressed against the side of the pot.</li>
-        <li>Remove all meat pieces. Shred the pork and mutton from the bones, cut the sausage into thick rounds. Return everything to the pot. Drizzle very generously with olive oil — this is essential, not a garnish. Taste extremely carefully before adding any salt. Serve in the deepest bowls you own, making sure every bowl contains broth, all three cabbages, potatoes and pieces of all four meats. Provide thick rustic bread for soaking up the extraordinary broth.</li>
-      </ol></div>
-    </div>
-    <div class="nutr"><h3>Nutrition per Serving</h3><div class="nutr-grid">
-      <div class="ni"><span class="nv">460</span><span class="nl">Calories</span></div>
-      <div class="ni"><span class="nv">42g</span><span class="nl">Protein</span></div>
-      <div class="ni"><span class="nv">24g</span><span class="nl">Carbs</span></div>
-      <div class="ni"><span class="nv">20g</span><span class="nl">Fat</span></div>
-      <div class="ni"><span class="nv">8g</span><span class="nl">Fibre</span></div>
-      <div class="ni"><span class="nv">920mg</span><span class="nl">Sodium</span></div>
-    </div></div>
-    <div class="tip"><strong>Chef's Tip</strong><p>Kaštradina is the ingredient that makes zelena menestra completely unlike any other dish in Croatian cuisine. It gives the broth a deep, slightly gamey, mineral complexity that no amount of smoked pork alone can replicate. It is sold in Dubrovnik markets and by specialist Dalmatian butchers throughout Croatia. Overnight soaking is non-negotiable — without it the entire dish will be far too salty. The olive oil drizzled at the end is not optional — it binds the broth and brings the entire dish together. Zelena menestra is always better on day two.</p></div>
-    <div class="tradition"><strong>Tradition — Dubrovnik's Most Beloved Dish</strong><p>Zelena menestra is the most authentically Dubrovnik dish in existence — a recipe unchanged for centuries, made in identical fashion in fishermen's cottages and the houses of the old Ragusan nobility alike. The combination of kaštradina brought by trade from the Dalmatian hinterland with three varieties of cabbage grown on Pelješac and the surrounding islands reflects the unique geography and extraordinary trading networks of the Ragusan Republic. Zelena menestra is always made in very large quantities — it is never a dish for two people — and shared at the table with the whole family and anyone who happens to arrive at the door. In Dubrovnik, the smell of zelena menestra simmering slowly on a Sunday morning is the smell of home itself, inseparable from the city's oldest and most enduring domestic traditions.</p></div>
-  </div>
+ <div class="recipe-top">
+ <div class="food-card" style="padding:0;overflow:hidden;background:#111">
+ <img src="zelena menestra.jpg" alt="Zelena menestra" style="width:100%;height:100%;object-fit:cover;display:block;min-height:200px">
+ </div>
+ <div class="recipe-header">
+ <div class="recipe-num">16</div>
+ <div class="recipe-name">Zelena Menestra</div>
+ <div class="recipe-phonetic">ZEH-leh-nah meh-NEH-strah</div>
+ <div class="recipe-tagline">Dubrovnik's ancient green soup — smoked pork with kale and root vegetables, a city's soul in a bowl</div>
+ <div class="recipe-pills"><span class="rpill">⏱ 20 min + 2hr cook</span><span class="rpill"> 6</span><span class="rpill"></span><span class="rpill"> Plavac Mali or Dingač</span></div>
+ </div>
+ </div>
+ <div class="recipe-body">
+ <div class="recipe-grid">
+ <div><h3> Ingredients</h3><ul class="ing-list">
+ <li><span>Smoked pork shank or ribs</span><span class="amt">800 g</span></li>
+ <li><span>Smoked pork sausages (kobasice)</span><span class="amt">300 g</span></li>
+ <li><span>Kale or collard greens, roughly chopped</span><span class="amt">600 g</span></li>
+ <li><span>Turnip or kohlrabi, diced</span><span class="amt">300 g</span></li>
+ <li><span>Potatoes, peeled and diced</span><span class="amt">400 g</span></li>
+ <li><span>Carrots, diced</span><span class="amt">3 medium</span></li>
+ <li><span>Onion, finely diced</span><span class="amt">1 large</span></li>
+ <li><span>Garlic, crushed</span><span class="amt">4 cloves</span></li>
+ <li><span>Olive oil</span><span class="amt">3 tbsp</span></li>
+ <li><span>Bay leaves, black pepper</span><span class="amt">3 / generous</span></li>
+ <li><span>Salt</span><span class="amt">to taste (pork is salty)</span></li>
+ <li><span>Water</span><span class="amt">2 litres</span></li>
+ </ul></div>
+ <div><h3>‍ Instructions</h3><ol class="steps">
+ <li>Place the smoked pork shank in a large pot with cold water. Bring to a boil, drain this first water (it removes excess salt and impurities), then refill with 2 litres of fresh cold water. Add bay leaves and bring back to a boil.</li>
+ <li>Reduce heat to a steady simmer and cook the pork for 45 minutes, skimming any foam that rises to the surface. The pork should be partially cooked before adding the vegetables.</li>
+ <li>In a separate small pan, heat olive oil. Sauté onion and garlic over medium heat for 8 minutes until softened. Add to the pork pot.</li>
+ <li>Add diced turnip, carrots and potatoes to the pot. Continue to simmer for 20 minutes until the root vegetables are beginning to soften.</li>
+ <li>Add the chopped kale and sliced sausages. Continue to cook for 30–40 more minutes over low heat until the kale is completely tender and has surrendered its bitterness, the vegetables are soft, and the broth is rich and deeply flavoured from the smoked meat.</li>
+ <li>Remove the pork shank, shred all the meat from the bone and return it to the soup. Discard the bone. Taste and adjust seasoning — the smoked meat is already salty so add additional salt carefully. Serve in deep bowls with thick slices of rustic bread.</li>
+ </ol></div>
+ </div>
+ <div class="nutr"><h3> Nutrition per Serving</h3><div class="nutr-grid">
+ <div class="ni"><span class="nv">420</span><span class="nl">Calories</span></div>
+ <div class="ni"><span class="nv">38g</span><span class="nl">Protein</span></div>
+ <div class="ni"><span class="nv">28g</span><span class="nl">Carbs</span></div>
+ <div class="ni"><span class="nv">18g</span><span class="nl">Fat</span></div>
+ <div class="ni"><span class="nv">6g</span><span class="nl">Fibre</span></div>
+ <div class="ni"><span class="nv">860mg</span><span class="nl">Sodium</span></div>
+ </div></div>
+ <div class="tip"><strong> Chef's Tip</strong><p>The initial blanching and discarding of the first cooking water is important — it removes excess salt from the smoked meat and results in a cleaner, clearer broth. Add salt ONLY after tasting at the very end, as smoked pork products vary widely in saltiness. This soup is always better the following day after the flavours have had time to integrate. Do not skip the kale — it is the defining ingredient.</p></div>
+ <div class="tradition"><strong> Tradition — Dubrovnik's Working-Class Heritage</strong><p>Zelena menestra is the quintessential Dubrovnik family dish — the meal that generations of ordinary Dubrovnik families ate through cold winters while the wealthy Republic's merchant class dined on more elaborate fare. Unlike the refined šporki makaruli and rozata which reflect the city's aristocratic trading heritage, zelena menestra is the food of the common people — sailors, fishermen, craftsmen and their families. It is made in Dubrovnik homes on Sundays and cold weekdays alike, and is considered as much a part of Dubrovnik's identity as the city walls themselves. The dish varies by season — in summer, green beans replace the kale; in autumn, pumpkin may be added.</p></div>
+ </div>
 </article>
 
 <!-- R26 BAKALAR -->
@@ -1305,11 +1264,11 @@ footer h3{font-family:'Playfair Display',serif;color:var(--gold-lt);font-size:1.
  <div class="recipe-body">
  <div class="recipe-grid">
  <div><h3> Ingredients</h3><ul class="ing-list">
- <li><span>Dried salt cod (bakalar), soaked 48hrs — change water twice daily</span><span class="amt"><span class="unit-metric">800 g</span><span class="unit-imperial" style="display:none">1 lb 12 oz</span></span></li>
- <li><span>Potatoes, boiled and peeled</span><span class="amt"><span class="unit-metric">800 g</span><span class="unit-imperial" style="display:none">1 lb 12 oz</span></span></li>
+ <li><span>Dried salt cod (bakalar), soaked 48hrs — change water twice daily</span><span class="amt">800 g</span></li>
+ <li><span>Potatoes, boiled and peeled</span><span class="amt">800 g</span></li>
  <li><span>Garlic cloves</span><span class="amt">8 cloves</span></li>
- <li><span>Extra virgin olive oil</span><span class="amt"><span class="unit-metric">150 ml</span><span class="unit-imperial" style="display:none">⅔ cup</span></span></li>
- <li><span>Warm milk</span><span class="amt"><span class="unit-metric">100 ml</span><span class="unit-imperial" style="display:none">7 tbsp</span></span></li>
+ <li><span>Extra virgin olive oil</span><span class="amt">150 ml</span></li>
+ <li><span>Warm milk</span><span class="amt">100 ml</span></li>
  <li><span>Fresh parsley</span><span class="amt">large bunch</span></li>
  <li><span>Black pepper, lemon juice</span><span class="amt">generous / 1 lemon</span></li>
  </ul></div>
@@ -1361,15 +1320,15 @@ footer h3{font-family:'Playfair Display',serif;color:var(--gold-lt);font-size:1.
  <div class="recipe-body">
  <div class="recipe-grid">
  <div><h3> Ingredients</h3><ul class="ing-list">
- <li><span>Ready-made puff pastry sheets</span><span class="amt"><span class="unit-metric">2 sheets (500g)</span><span class="unit-imperial" style="display:none">2 sheets (1 lb 2 oz)</span></span></li>
- <li><span>Whole milk</span><span class="amt"><span class="unit-metric">1 litre</span><span class="unit-imperial" style="display:none">4 cups</span></span></li>
+ <li><span>Ready-made puff pastry sheets</span><span class="amt">2 sheets (500g)</span></li>
+ <li><span>Whole milk</span><span class="amt">1 litre</span></li>
  <li><span>Egg yolks</span><span class="amt">8 large</span></li>
- <li><span>Caster sugar</span><span class="amt"><span class="unit-metric">180 g</span><span class="unit-imperial" style="display:none">6¼ oz</span></span></li>
- <li><span>Cornflour (cornstarch)</span><span class="amt"><span class="unit-metric">80 g</span><span class="unit-imperial" style="display:none">2¾ oz</span></span></li>
+ <li><span>Caster sugar</span><span class="amt">180 g</span></li>
+ <li><span>Cornflour (cornstarch)</span><span class="amt">80 g</span></li>
  <li><span>Vanilla bean (or 2 tsp extract)</span><span class="amt">1</span></li>
- <li><span>Butter</span><span class="amt"><span class="unit-metric">50 g</span><span class="unit-imperial" style="display:none">1¾ oz</span></span></li>
- <li><span>Heavy whipping cream (36%+)</span><span class="amt"><span class="unit-metric">500 ml</span><span class="unit-imperial" style="display:none">2 cups</span></span></li>
- <li><span>Powdered sugar, vanilla sugar</span><span class="amt"><span class="unit-metric">40 g / 1 sachet</span><span class="unit-imperial" style="display:none">1½ oz / 1 sachet</span></span></li>
+ <li><span>Butter</span><span class="amt">50 g</span></li>
+ <li><span>Heavy whipping cream (36%+)</span><span class="amt">500 ml</span></li>
+ <li><span>Powdered sugar, vanilla sugar</span><span class="amt">40 g / 1 sachet</span></li>
  <li><span>Icing sugar for dusting</span><span class="amt">generous</span></li>
  </ul></div>
  <div><h3>‍ Instructions</h3><ol class="steps">
@@ -1411,15 +1370,15 @@ footer h3{font-family:'Playfair Display',serif;color:var(--gold-lt);font-size:1.
  <div class="recipe-body">
  <div class="recipe-grid">
  <div><h3> Ingredients</h3><ul class="ing-list">
- <li><span>Plain flour</span><span class="amt"><span class="unit-metric">400 g</span><span class="unit-imperial" style="display:none">14 oz</span></span></li>
- <li><span>Fresh yeast (or 7g dried)</span><span class="amt"><span class="unit-metric">20 g</span><span class="unit-imperial" style="display:none">¾ oz</span></span></li>
- <li><span>Warm whole milk</span><span class="amt"><span class="unit-metric">200 ml</span><span class="unit-imperial" style="display:none">¾ cup</span></span></li>
+ <li><span>Plain flour</span><span class="amt">400 g</span></li>
+ <li><span>Fresh yeast (or 7g dried)</span><span class="amt">20 g</span></li>
+ <li><span>Warm whole milk</span><span class="amt">200 ml</span></li>
  <li><span>Eggs</span><span class="amt">3 large</span></li>
- <li><span>Sugar, vanilla sugar</span><span class="amt"><span class="unit-metric">60 g / 2 sachets</span><span class="unit-imperial" style="display:none">2 oz / 2 sachets</span></span></li>
+ <li><span>Sugar, vanilla sugar</span><span class="amt">60 g / 2 sachets</span></li>
  <li><span>Lemon zest, orange zest</span><span class="amt">1 of each</span></li>
  <li><span>Rakija (grappa or brandy)</span><span class="amt">3 tbsp</span></li>
- <li><span>Raisins, soaked in rum overnight</span><span class="amt"><span class="unit-metric">100 g</span><span class="unit-imperial" style="display:none">3½ oz</span></span></li>
- <li><span>Salt, oil for frying</span><span class="amt"><span class="unit-metric">pinch / 1 litre</span><span class="unit-imperial" style="display:none">pinch / 4 cups</span></span></li>
+ <li><span>Raisins, soaked in rum overnight</span><span class="amt">100 g</span></li>
+ <li><span>Salt, oil for frying</span><span class="amt">pinch / 1 litre</span></li>
  <li><span>Icing sugar for dusting</span><span class="amt">very generous</span></li>
  </ul></div>
  <div><h3>‍ Instructions</h3><ol class="steps">
@@ -1460,13 +1419,13 @@ footer h3{font-family:'Playfair Display',serif;color:var(--gold-lt);font-size:1.
  <div class="recipe-body">
  <div class="recipe-grid">
  <div><h3> Ingredients</h3><ul class="ing-list">
- <li><span>Plain flour</span><span class="amt"><span class="unit-metric">500 g</span><span class="unit-imperial" style="display:none">1 lb 2 oz</span></span></li>
- <li><span>Dark fragrant honey</span><span class="amt"><span class="unit-metric">180 g</span><span class="unit-imperial" style="display:none">6¼ oz</span></span></li>
- <li><span>Sugar, butter, eggs</span><span class="amt"><span class="unit-metric">100 g / 100 g / 2</span><span class="unit-imperial" style="display:none">3½ oz / 3½ oz / 2</span></span></li>
+ <li><span>Plain flour</span><span class="amt">500 g</span></li>
+ <li><span>Dark fragrant honey</span><span class="amt">180 g</span></li>
+ <li><span>Sugar, butter, eggs</span><span class="amt">100 g / 100 g / 2</span></li>
  <li><span>Cinnamon, ground cloves</span><span class="amt">2 tsp / ½ tsp</span></li>
  <li><span>Ground ginger, nutmeg</span><span class="amt">1 tsp / ¼ tsp</span></li>
  <li><span>Baking soda, lemon zest</span><span class="amt">1 tsp / 1 lemon</span></li>
- <li><span>Icing sugar (royal icing)</span><span class="amt"><span class="unit-metric">200 g</span><span class="unit-imperial" style="display:none">7 oz</span></span></li>
+ <li><span>Icing sugar (royal icing)</span><span class="amt">200 g</span></li>
  <li><span>Egg white, lemon juice (icing)</span><span class="amt">1 large / 1 tsp</span></li>
  <li><span>Food colouring (red, for traditional hearts)</span><span class="amt">optional</span></li>
  </ul></div>
@@ -1526,35 +1485,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
  const t = document.querySelector(a.getAttribute('href'));
  if (t) { e.preventDefault(); t.scrollIntoView({behavior:'smooth', block:'start'}); }
  });
-});
-</script>
-
-<script>
-function setUnits(unit) {
-  const metrics = document.querySelectorAll('.unit-metric');
-  const imperials = document.querySelectorAll('.unit-imperial');
-  const btnM = document.getElementById('btn-metric');
-  const btnI = document.getElementById('btn-imperial');
-
-  if (unit === 'metric') {
-    metrics.forEach(el => el.style.display = '');
-    imperials.forEach(el => el.style.display = 'none');
-    btnM.classList.add('active');
-    btnI.classList.remove('active');
-    localStorage.setItem('ct-units', 'metric');
-  } else {
-    metrics.forEach(el => el.style.display = 'none');
-    imperials.forEach(el => el.style.display = '');
-    btnM.classList.remove('active');
-    btnI.classList.add('active');
-    localStorage.setItem('ct-units', 'imperial');
-  }
-}
-
-// Restore preference
-document.addEventListener('DOMContentLoaded', function() {
-  const saved = localStorage.getItem('ct-units');
-  if (saved === 'imperial') setUnits('imperial');
 });
 </script>
 </body>
